@@ -1,0 +1,2446 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Eng: Mohamed Magdy Mettwally">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The Reference For Back-End Developers, It's Contain All Code The Developers use in coding, Node.js, SQL DB (Sequelize), MongoDB (Mongoose), APIs,GraphQL, Socket.io, Ajax">
+        <meta name="keywords" content="Node.js Database SQL Sequelize MongoDB Mongoose APIs GraphQL Socket.io Ajax Coding Developers Back-End">
+    
+        <title>Third-Modules</title>
+        <meta property="og:image" content="./../src/Images/Logo-MM-Cover.jpg">
+        <link rel="website icon" type="PNG" href="./../src/Images/Logo-MM-Title.png">
+
+        <!-- Offline Bootstrap CSS : -->
+        <link href="../CSS/bootstrap.min.css" rel="stylesheet"/>
+
+        <!-- FontAwesome CSS : -->
+        <link href="../CSS/all.min.css" rel="stylesheet"/>
+                
+        <!-- My Shared CSS : -->
+        <link href="../CSS/shared.css" rel="stylesheet"/>
+
+    </head>
+
+    <body>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Loader -->
+        <!------------>
+
+        <div id="myLoading">
+
+            <!---------------------------------------------------------------->
+    
+            <div id="loadingDiv" class="d-flex justify-content-center align-items-center">
+                <div id="loaderDiv" class="loader--style6" title="5">
+                    <svg id="loaderSize" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px"
+                        viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                        <rect x="0" y="13" width="4" height="5" fill="blue">
+                            <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0s" dur="0.6s"
+                                repeatCount="indefinite" />
+                            <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0s" dur="0.6s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <rect x="10" y="13" width="4" height="5" fill="white">
+                            <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.15s" dur="0.6s"
+                                repeatCount="indefinite" />
+                            <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.15s" dur="0.6s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <rect x="20" y="13" width="4" height="5" fill="blue">
+                            <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.3s" dur="0.6s"
+                                repeatCount="indefinite" />
+                            <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.3s" dur="0.6s"
+                                repeatCount="indefinite" />
+                        </rect>
+                    </svg>
+                </div>
+            </div>
+    
+            <!---------------------------------------------------------------->
+    
+        </div>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Header -->
+        <!------------>
+
+        <header id="headerSection" class="w-100 vh-100 mb-1">
+
+            <div id="headerDiv" class="overflow-hidden position-relative">
+
+                <svg id="svg_white" viewBox="0 0 1440 320">
+                    <path fill="white" fill-opacity="1" d="M0,0L24,16C48,32,96,64,144,80C192,96,240,96,288,80C336,64,384,32,432,48C480,64,528,128,576,144C624,160,672,128,720,133.3C768,139,816,181,864,197.3C912,213,960,203,1008,208C1056,213,1104,235,1152,245.3C1200,256,1248,256,1296,250.7C1344,245,1392,235,1416,229.3L1440,224L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path>
+                </svg>
+
+                <svg id="svg_blueviolet" viewBox="0 0 1440 320">
+                    <path fill="blueviolet" fill-opacity="1" d="M0,0L24,16C48,32,96,64,144,80C192,96,240,96,288,80C336,64,384,32,432,48C480,64,528,128,576,144C624,160,672,128,720,133.3C768,139,816,181,864,197.3C912,213,960,203,1008,208C1056,213,1104,235,1152,245.3C1200,256,1248,256,1296,250.7C1344,245,1392,235,1416,229.3L1440,224L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path>
+                </svg>
+
+                <div id="headerDiv_Content" class="d-flex flex-column justify-content-center align-items-start">
+
+    
+                    <div class="ms-3 text-white">
+
+                        <h4>Back End..</h4>
+                        <h1 id="theMainTitle" class="fw-bold">Third Modules</h1>
+                        <h5 class="text-end">NPM Install</h5>
+
+                    </div>
+                                
+                    <div>
+                        <div class="d-flex justify-content-start ms-3 mb-3">
+        
+                            <div class="rotating-text">
+                    
+                                <p class="kf text-light">I'm a </p>
+                    
+                                <p>
+                                    <span class="word w-1">     M.Magdy    </span>
+                                    <span class="word w-2">     Full-Stack </span>
+                                    <span class="word w-3">     Developer  </span>
+                                </p>
+                            
+                            </div>
+        
+                        </div>
+        
+                        <div class="text-light ms-3 d-flex justify-content-start">
+                
+                            <button onclick="openLink('www.linkedin.com/in/eng-m-ma9dy/')" class="SM-BTN-icon LinkedIn rounded-circle me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </button>
+        
+                            <button onclick="openLink('github.com/Eng-M-Ma9dy')" class="SM-BTN-icon GitHub rounded-circle mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-github"></i>
+                            </button>
+        
+                            <button onclick="openLink('www.facebook.com/eng.m.ma9dy/')" class="SM-BTN-icon Facebook rounded-circle mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.instagram.com/eng.m.ma9dy/')" class="SM-BTN-icon Instagram rounded-circle mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-instagram"></i>
+                            </button>
+                
+                        </div>
+                        
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </header>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Main -->
+        <!---------->
+
+        <main id="mainSection" class="text-white mb-1">
+        
+            <div id="mainDiv" class="py-5">
+
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+    
+    <div class="mt-5">
+        <button id="homeBTN" onclick="openLink('eng-m-ma9dy.github.io/BackEnd/')" class="border-0 mx-auto text-white bg-primary fs-1 d-flex justify-content-center align-items-center">
+            <i class="px-2 border-0 fa-solid fa-house-chimney"></i> <span id="homeText" class="d-none">Home</span>
+        </button>
+    </div>
+
+
+
+
+    <div class="container-xl mb-5">
+
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mt-5  text-center">( <span class="text-primary">Third Modules</span> ) </h1>
+
+                <form class="form-group col-10 col-lg-8 mx-auto my-5">    
+
+                    <input id="sDB1_1" onkeyup="searchDB(this.value)" type="=text" placeholder="Search" class="form-control mt-3 mb-4">    
+
+                </form>
+
+                <!-- dotenv ------------------------------------------------------------------------------>
+
+                <section class="my-5 p-md-5 p-3 mega">
+                    <div class="btnDiv d-flex justify-content-start align-items-center">
+                        <button id="btn-1"class="border-0 bg-transparent text-danger fs-2 mb-0"
+                            onclick="changeScope(1)">&#62;&#62;&#62;</button>
+                        <label for="btn-1"style="cursor: pointer;">
+                            <h2 class="mb-0">* dotenv : </h2>
+                        </label>
+                    </div>
+
+                    <div id="button1"class="my-5 d-none">
+
+                        <div>
+                            <div class="row">
+                                        
+                    
+                                <div class="col-md-6">
+                                        
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; index.js
+    //-------------------------------------------------------------------------
+
+    // I Use dotenv For Save All Secret Key, Password and Save other Secret Info I need To Hidden it from code
+
+    // For Install >> npm i dotenv
+
+    // For Use : Make import in index.js file
+
+    import * as dotenv from 'dotenv';
+    
+    dotenv.config({})
+
+    // Create .env File in this path project &#62; .env
+
+    // Set ane String Value in .env file
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+                    
+                    
+                                <div class="col-md-6">
+                                        
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; .env
+    //-------------------------------------------------------------------------
+
+    Connection_URL = mongodb://127.0.0.1:27017/Mega-Voting
+
+    api_key = 396353482757213
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+                    
+                    
+                                <div class="col-md-12 mt-5">
+                                        
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre class="m-0">
+<code>
+
+    // For Use It in any file
+    //-------------------------------------------------------------------------
+
+    let connection = process.env.Connection_URL
+
+    let myKey = process.env.api_key
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </section>
+
+                <!-- Joi ------------------------------------------------------------------------------>
+
+                <section class="my-5 p-md-5 p-3 mega">
+                    <div class="btnDiv d-flex justify-content-start align-items-center">
+                        <button id="btn-2"class="border-0 bg-transparent text-danger fs-2 mb-0"
+                            onclick="changeScope(2)">&#62;&#62;&#62;</button>
+                        <label for="btn-2"style="cursor: pointer;">
+                            <h2 class="mb-0">* Joi : </h2>
+                        </label>
+                    </div>
+
+                    <div id="button2"class="my-5 d-none">
+
+                        <div>
+                            <div class="row">
+                                            
+                                <div class="col-md-12 mb-5">
+                                        
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; middleware &#62; validation.js
+    //-------------------------------------------------------------------------
+
+    // I Use Joi For Make Data INput Validation Before set it in Database
+    
+    // For install Joi &#62;&#62; npm i joi
+
+    export const validation = (schema) => {
+
+        return (req,res,next) => {
+    
+            // by default validate out after the first error
+
+            // let {error} = signUpSchema.validate(req.body);
+    
+            // For Show All Error use abortEarly error
+    
+            let {error} = schema.validate(req.body,{abortEarly:false});
+    
+            if (error) {
+    
+                res.json({message:"Validation Error",error})
+    
+            }else{
+    
+                next()
+            }
+    
+        }
+    
+    }
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+
+                                <div class="col-md-6">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; Users &#62; controller &#62; user.validation.js
+    //-------------------------------------------------------------------------
+
+    // I Use Joi For Do Validation Before Set Any Thing in DB
+
+    // For Install >> npm i joi
+
+    import joi from 'joi';
+
+
+    const signUpSchema = joi.object({
+
+        name : joi.string().alphanum().min(3).max(30).required(), // The Minimum Number of Letter 3 
+        
+        // age : joi.number().min(3) // The Minimum 3
+        
+        // email : joi.string().email()
+        
+        // For Use Top Level Domain
+        
+        email: joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
+        
+        password: joi.string().pattern(/^[A-Z][a-z]{3,9}\@[0-9]{3,}/),
+        
+        CPpassword: joi.ref('password'),
+        
+        role: joi.string()
+    
+    })
+    
+    
+    
+    
+    const signInSchema = joi.object({
+    
+        email: joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
+        
+        password: joi.string().pattern(/^[A-Z][a-z]{3,9}\@[0-9]{3,}/)
+    
+    })
+    
+    export {
+
+        signUpSchema,
+        
+        signInSchema
+    }
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+        
+                    
+                                <div class="col-md-6">
+                    
+                                        
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; Users &#62; user.router.js
+    //-------------------------------------------------------------------------
+
+    import  express  from "express";
+    const router = express.Router();
+    export default router;
+    
+    
+    import { signUp , signIn} from "./controller/user.controller.js";
+    import { validation } from "../../middleware/validation.js";
+    import { signUpSchema , signInSchema } from "./controller/user.validation.js";
+    
+    
+    router.get("/",getAllUsers)
+    
+    
+    // i need to create route from type post for signup
+    router.post("/signUp",validation(signUpSchema),signUp)
+    
+    
+    // i need to create route from type post for signIn
+    router.post("/signIn",validation(signInSchema),signIn)
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </section>
+
+                <!-- Jwt & bcrypt ------------------------------------------------------------------------------>
+
+                <section class="my-5 p-md-5 p-3 mega">
+                    <div class="btnDiv d-flex justify-content-start align-items-center">
+                        <button id="btn-3"class="border-0 bg-transparent text-danger fs-2 mb-0"
+                            onclick="changeScope(3)">&#62;&#62;&#62;</button>
+                        <label for="btn-3"style="cursor: pointer;">
+                            <h2 class="mb-0">* jwt / bcrypt : </h2>
+                        </label>
+                    </div>
+
+                    <div id="button3"class="my-5 d-none">
+
+                        <div>
+                            <div class="row">
+                                
+
+                                <div class="col-md-12 mb-5">
+                                        
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; middleware &#62; authorization.js
+    //-------------------------------------------------------------------------
+
+    // I Use jsonwebtoken For Create Token For Every User  
+    
+    // For install Jwt &#62;&#62; npm i jsonwebtoken
+
+    import jwt from 'jsonwebtoken'
+
+    export const auth = (req,res,next)=>{
+    
+        let authorization = req.headers["authorization"];
+    
+        if (!authorization || (authorization && authorization.startsWith("Bearer ") == false )) {
+    
+            res.json({message:"Invalid Token, You Aren't Authorized"});
+    
+        }else{
+            console.log("Valid Token, Welcome");
+    
+            let token_Auth = authorization.split(" ")[1];
+    
+            jwt.verify(token_Auth,'KeyMega',(err,decoded)=>{
+
+                // 'KeyMega': Hash Key
+    
+                if (err) {
+        
+                    res.json({message:"Invalid Token, You Aren't Authorized",err});
+        
+                } else {
+        
+                    req.userID = decoded.userID
+        
+                    next()
+                }
+            })
+        }
+    
+    
+    }
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+
+                                <div class="col-md-6">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; Users &#62; controller &#62; user.controller.js
+    //-------------------------------------------------------------------------
+
+    import userModel from '../../../../Database/models/user.model.js'
+
+    // For Replace Password by Hash Password in Database
+
+    // i will use bcrypt
+    
+    // For install bcrypt &#62;&#62; npm i bcrypt
+
+    import bcrypt from "bcrypt";
+
+    export const signUp = async (req,res,next)=>{
+
+        let {name,email,password,role} = req.body;
+    
+        let foundedUser = await userModel.findOne({email})
+
+        if(foundedUser){
+        
+            res.json ({message:"User Already Register"})
+        
+        }else{
+
+            // For Use bcrypt
+            // bcrypt.hash(pass , Number Of Round) : return promise I need To Use Async / await
+            // bcrypt.hashSync(pass , Number Of Round) : don't need to use Async / await
+    
+            let hashedPassword = bcrypt.hashSync( password , 4 )
+    
+            let addUser = await userModel.insertMany({name,email,password:hashedPassword,role})
+            
+            res.json({message:"Done",addUser})
+    
+        }
+    
+    }
+    
+    //-------------------------------------------------------------------------
+    //-------------------------------------------------------------------------
+    
+    // I Use jsonwebtoken For Create Token For Every User  
+    
+    // For install Joi &#62;&#62; npm i jsonwebtoken
+
+    import jwt from 'jsonwebtoken'
+
+    export const signIn = async (req,res)=>{
+
+        let {email,password} = req.body;
+
+        let foundedUser = await userModel.findOne({email})
+
+        if(foundedUser){
+
+            // bcrypt.compare(pass , Number Of Round) : return promise I need To Use Async / await
+
+            // bcrypt.compareSync(pass , Number Of Round) : don't need to use Async / await
+
+            // let passMatched = await bcrypt.compare(password , foundedUser.password)
+
+            let passMatched = bcrypt.compareSync(password , foundedUser.password)
+
+            if(passMatched){
+
+                let token = jwt.sign({userID:foundedUser._id, name:foundedUser.name},'KeyMega',{expiresIn: 60 * 240 }); // 1 Min
+                
+                // 'KeyMega': Hash Key
+
+                // console.log(token);
+
+                res.json ({message:"LogIn Success",token})
+
+            }else{
+
+                res.json ({message:"Password Incorrect"})
+            }
+
+        }else{
+
+            res.json({message:"Email Not Found, You Have To Register"})
+        }
+
+    }
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+        
+                    
+                                <div class="col-md-6">
+                    
+                                        
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; Users &#62; user.router.js
+    //-------------------------------------------------------------------------
+
+    import  express  from "express";
+    const router = express.Router();
+    export default router;
+    
+    import { signUpSchema ,signInSchema } from "./controller/user.validation.js";    
+    
+    router.post("/signUp", signUp)
+        
+    router.post("/signIn", signIn)
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </section>
+
+                <!-- nodemailer ------------------------------------------------------------------------------>
+
+                <section class="my-5 p-md-5 p-3 mega">
+                    <div class="btnDiv d-flex justify-content-start align-items-center">
+                        <button id="btn-4"class="border-0 bg-transparent text-danger fs-2 mb-0"
+                            onclick="changeScope(4)">&#62;&#62;&#62;</button>
+                        <label for="btn-4"style="cursor: pointer;">
+                            <h2 class="mb-0">* nodemailer : </h2>
+                        </label>
+                    </div>
+
+                    <div id="button4"class="my-5 d-none">
+
+                        <div>
+                            <div class="row">
+                                
+                                <div class="col-md-12 mb-5">
+                                        
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; DB &#62; models &#62; user.model.js
+    //-------------------------------------------------------------------------
+
+    import mongoose from 'mongoose';
+
+    const userSchema = new mongoose.Schema({
+        name: {
+            type:String,
+            min:[3,"This is Short Name"],
+            max:[30,"This is Long Name"]
+        },
+
+        age:{
+            type:Number,
+            min:15,
+            max:30
+        },
+
+        email:{
+            type:String,
+            required:[true,"Email Required"],
+        },
+
+        confirmedEmail:{
+
+            type: Boolean,
+            default:false
+        },
+
+        password:String
+    },{
+        timestamps:true
+    })
+
+    const userModel = mongoose.model("User",userSchema)
+    export default userModel
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-6 mb-5">
+                                        
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Services &#62; email-template.js
+    //-------------------------------------------------------------------------
+
+    export const html = (email)=&#62;{
+        return 
+        `
+        &#60;head&#62;
+            &#60;title&#62;&#60;/title&#62;
+            &#60;!--[if !mso]&#62;&#60;!-- --&#62;
+            &#60;meta http-equiv="X-UA-Compatible" content="IE=edge"&#62;
+            &#60;!--&#60;![endif]--&#62;
+            &#60;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&#62;
+            &#60;style&#62; type="text/css"&#62;
+                #outlook a {
+                    padding: 0;
+                }
+        
+                .ReadMsgBody {
+                    width: 100%;
+                }
+        
+                .ExternalClass {
+                    width: 100%;
+                }
+        
+                .ExternalClass * {
+                    line-height: 100%;
+                }
+        
+                body {
+                    margin: 0;
+                    padding: 0;
+                    -webkit-text-size-adjust: 100%;
+                    -ms-text-size-adjust: 100%;
+                }
+        
+                table,
+                td {
+                    border-collapse: collapse;
+                    mso-table-lspace: 0pt;
+                    mso-table-rspace: 0pt;
+                }
+        
+                img {
+                    border: 0;
+                    height: auto;
+                    line-height: 100%;
+                    outline: none;
+                    text-decoration: none;
+                    -ms-interpolation-mode: bicubic;
+                }
+        
+                p {
+                    display: block;
+                    margin: 13px 0;
+                }
+            &#60;/style&#62;
+            &#60;!--[if !mso]&#62;&#60;!--&#62;
+            &#60;style&#62; type="text/css"&#62;
+                @media only screen and (max-width:480px) {
+                    @-ms-viewport {
+                        width: 320px;
+                    }
+        
+                    @viewport {
+                        width: 320px;
+                    }
+                }
+            &#60;/style&#62;
+            &#60;!--&#60;![endif]--&#62;
+            &#60;!--[if mso]&#62;
+          &#60;xml&#62;
+            &#60;o:OfficeDocumentSettings&#62;
+              &#60;o:AllowPNG/&#62;
+              &#60;o:PixelsPerInch&#62;96&#60;/o:PixelsPerInch&#62;
+            &#60;/o:OfficeDocumentSettings&#62;
+          &#60;/xml&#62;
+          &#60;![endif]--&#62;
+            &#60;!--[if lte mso 11]&#62;
+          &#60;style&#62; type="text/css"&#62;
+            .outlook-group-fix {
+              width:100% !important;
+            }
+          &#60;/style&#62;
+          &#60;![endif]--&#62;
+        
+            &#60;!--[if !mso]&#62;&#60;!--&#62;
+            &#60;link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet" type="text/css"&#62;
+            &#60;style&#62; type="text/css"&#62;
+                @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
+            &#60;/style&#62;
+            &#60;!--&#60;![endif]--&#62;
+            &#60;style&#62; type="text/css"&#62;
+                @media only screen and (min-width:480px) {
+        
+                    .mj-column-per-100,
+                    * [aria-labelledby="mj-column-per-100"] {
+                        width: 100% !important;
+                    }
+                }
+            &#60;/style&#62;
+        &#60;/head&#62;
+        
+        &#60;body style="background: #F9F9F9;"&#62;
+            &#60;div style="background-color:#F9F9F9;"&#62;&#60;!--[if mso | IE]&#62;
+                &#60;table role="presentation" border="0" cellpadding="0" cellspacing="0" width="640" align="center" style="width:640px;"&#62;
+                  &#60;tr&#62;
+                    &#60;td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"&#62;
+                &#60;![endif]--&#62;
+                &#60;style&#62; type="text/css"&#62;
+                    html,
+                    body,
+                    * {
+                        -webkit-text-size-adjust: none;
+                        text-size-adjust: none;
+                    }
+        
+                    a {
+                        color: #1EB0F4;
+                        text-decoration: none;
+                    }
+        
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                &#60;/style&#62;
+                &#60;div style="margin:0px auto;max-width:640px;background:transparent;"&#62;
+                    &#60;table role="presentation" cellpadding="0" cellspacing="0"
+                        style="font-size:0px;width:100%;background:transparent;" align="center" border="0"&#62;
+                        &#60;tbody&#62;
+                            &#60;tr&#62;
+                                &#60;td style="text-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:40px 0px;"&#62;&#60;!--[if mso | IE]&#62;
+                &#60;table role="presentation" border="0" cellpadding="0" cellspacing="0"&#62;&#60;tr&#62;&#60;td style="vertical-align:top;width:640px;"&#62;
+                &#60;![endif]--&#62;
+                                    &#60;div aria-labelledby="mj-column-per-100" class="mj-column-per-100 outlook-group-fix"
+                                        style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;"&#62;
+                                        &#60;table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0"&#62;
+                                            &#60;tbody&#62;
+                                                &#60;tr&#62;
+                                                    &#60;td style="word-break:break-word;font-size:0px;padding:0px;" align="center"&#62;
+                                                        &#60;table role="presentation" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;border-spacing:0px;" align="center"
+                                                            border="0"&#62;
+                                                            &#60;tbody&#62;
+                                                                &#60;tr&#62;
+                                                                    &#60;td style="width:138px;"&#62;&#60;a&#62; href="https://discordapp.com/"
+                                                                            target="_blank"&#62;&#60;img alt="" title="" height="38px"
+                                                                                src="https://cdn.discordapp.com/email_assets/2ec94ed90b8e95d764f2a1c96f33139e.png"
+                                                                                style="border:none;border-radius:;display:block;outline:none;text-decoration:none;width:100%;height:38px;"
+                                                                                width="138"&#62;&#60;/a&#62;&#60;/td&#62;
+                                                                &#60;/tr&#62;
+                                                            &#60;/tbody&#62;
+                                                        &#60;/table&#62;
+                                                    &#60;/td&#62;
+                                                &#60;/tr&#62;
+                                            &#60;/tbody&#62;
+                                        &#60;/table&#62;
+                                    &#60;/div&#62;&#60;!--[if mso | IE]&#62;
+                &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+                &#60;![endif]--&#62;
+                                &#60;/td&#62;
+                            &#60;/tr&#62;
+                        &#60;/tbody&#62;
+                    &#60;/table&#62;
+                &#60;/div&#62;&#60;!--[if mso | IE]&#62;
+                &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+                &#60;![endif]--&#62;
+                &#60;!--[if mso | IE]&#62;
+                &#60;table role="presentation" border="0" cellpadding="0" cellspacing="0" width="640" align="center" style="width:640px;"&#62;
+                  &#60;tr&#62;
+                    &#60;td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"&#62;
+                &#60;![endif]--&#62;
+                &#60;div
+                    style="max-width:640px;margin:0 auto;box-shadow:0px 1px 5px rgba(0,0,0,0.1);border-radius:4px;overflow:hidden"&#62;
+                    &#60;div
+                        style="margin:0px auto;max-width:640px;background:#7289DA url(https://cdn.discordapp.com/email_assets/f0a4cc6d7aaa7bdf2a3c15a193c6d224.png) top center / cover no-repeat;"&#62;&#60;!--[if mso | IE]&#62;
+                &#60;v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:640px;"&#62;
+                  &#60;v:fill origin="0.5, 0" position="0.5,0" type="tile" src="https://cdn.discordapp.com/email_assets/f0a4cc6d7aaa7bdf2a3c15a193c6d224.png" /&#62;
+                  &#60;v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0"&#62;
+                &#60;![endif]--&#62;
+                        &#60;table role="presentation" cellpadding="0" cellspacing="0"
+                            style="font-size:0px;width:100%;background:#7289DA url(https://cdn.discordapp.com/email_assets/f0a4cc6d7aaa7bdf2a3c15a193c6d224.png) top center / cover no-repeat;"
+                            align="center" border="0"
+                            background="https://cdn.discordapp.com/email_assets/f0a4cc6d7aaa7bdf2a3c15a193c6d224.png"&#62;
+                            &#60;tbody&#62;
+                                &#60;tr&#62;
+                                    &#60;td style="text-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:57px;"&#62;&#60;!--[if mso | IE]&#62;
+                &#60;table role="presentation" border="0" cellpadding="0" cellspacing="0"&#62;&#60;tr&#62;&#60;td style="vertical-align:undefined;width:640px;"&#62;
+                &#60;![endif]--&#62;
+                                        &#60;div&#62;
+                                            style="cursor:auto;color:white;font-family:Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-size:36px;font-weight:600;line-height:36px;text-align:center;"&#62;
+                                            Welcome to Discord!&#60;/div&#62;&#60;!--[if mso | IE]&#62;
+                &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+                &#60;![endif]--&#62;
+                                    &#60;/td&#62;
+                                &#60;/tr&#62;
+                            &#60;/tbody&#62;
+                        &#60;/table&#62;&#60;!--[if mso | IE]&#62;
+                  &#60;/v:textbox&#62;
+                &#60;/v:rect&#62;
+                &#60;![endif]--&#62;
+                    &#60;/div&#62;&#60;!--[if mso | IE]&#62;
+                &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+                &#60;![endif]--&#62;
+                    &#60;!--[if mso | IE]&#62;
+                &#60;table role="presentation" border="0" cellpadding="0" cellspacing="0" width="640" align="center" style="width:640px;"&#62;
+                  &#60;tr&#62;
+                    &#60;td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"&#62;
+                &#60;![endif]--&#62;
+                    &#60;div style="margin:0px auto;max-width:640px;background:#ffffff;"&#62;
+                        &#60;table role="presentation" cellpadding="0" cellspacing="0"
+                            style="font-size:0px;width:100%;background:#ffffff;" align="center" border="0"&#62;
+                            &#60;tbody&#62;
+                                &#60;tr&#62;
+                                    &#60;td
+                                        style="text-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:40px 70px;"&#62;&#60;!--[if mso | IE]&#62;
+                &#60;table role="presentation" border="0" cellpadding="0" cellspacing="0"&#62;&#60;tr&#62;&#60;td style="vertical-align:top;width:640px;"&#62;
+                &#60;![endif]--&#62;
+                                        &#60;div aria-labelledby="mj-column-per-100" class="mj-column-per-100 outlook-group-fix"
+                                            style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;"&#62;
+                                            &#60;table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0"&#62;
+                                                &#60;tbody&#62;
+                                                    &#60;tr&#62;
+                                                        &#60;td style="word-break:break-word;font-size:0px;padding:0px 0px 20px;"
+                                                            align="left"&#62;
+                                                            &#60;div
+                                                                style="cursor:auto;color:#737F8D;font-family:Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-size:16px;line-height:24px;text-align:left;"&#62;
+                                                                &#60;p&#62;&#60;img src="https://cdn.discordapp.com/email_assets/127c95bbea39cd4bc1ad87d1500ae27d.png"
+                                                                        alt="Party Wumpus" title="None" width="500"
+                                                                        style="height: auto;"&#62;&#60;/p&#62;
+        
+                                                                &#60;h2&#62;
+                                                                    style="font-family: Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-weight: 500;font-size: 20px;color: #4F545C;letter-spacing: 0.27px;"&#62;
+                                                                    Hey SmilesDavis,&#60;/h2&#62;
+                                                                &#60;p&#62;Wowwee! Thanks for registering an account with Discord!
+                                                                    You're the coolest person in all the land (and I've met a
+                                                                    lot of really cool people).&#60;/p&#62;
+                                                                &#60;p&#62;Before we get started, we'll need to verify your email.&#60;/p&#62;
+        
+                                                            &#60;/div&#62;
+                                                        &#60;/td&#62;
+                                                    &#60;/tr&#62;
+                                                    &#60;tr&#62;
+                                                        &#60;td style="word-break:break-word;font-size:0px;padding:10px 25px;"
+                                                            align="center"&#62;
+                                                            &#60;table role="presentation" cellpadding="0" cellspacing="0"
+                                                                style="border-collapse:separate;" align="center" border="0"&#62;
+                                                                &#60;tbody&#62;
+                                                                    &#60;tr&#62;
+                                                                        &#60;td style="border:none;border-radius:3px;color:white;cursor:auto;padding:15px 19px;"
+                                                                            align="center" valign="middle" bgcolor="#7289DA"&#62;&#60;a&#62;
+                                                                                href="http://localhost:3000/API/V1/Users/verify/${email}"
+                                                                                style="text-decoration:none;line-height:100%;background:#7289DA;color:white;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:15px;font-weight:normal;text-transform:none;margin:0px;"
+                                                                                target="_blank"&#62;
+                                                                                Verify Email
+                                                                            &#60;/a&#62;&#60;/td&#62;
+                                                                    &#60;/tr&#62;
+                                                                &#60;/tbody&#62;
+                                                            &#60;/table&#62;
+                                                        &#60;/td&#62;
+                                                    &#60;/tr&#62;
+                                                &#60;/tbody&#62;
+                                            &#60;/table&#62;
+                                        &#60;/div&#62;&#60;!--[if mso | IE]&#62;
+                &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+                &#60;![endif]--&#62;
+                                    &#60;/td&#62;
+                                &#60;/tr&#62;
+                            &#60;/tbody&#62;
+                        &#60;/table&#62;
+                    &#60;/div&#62;&#60;!--[if mso | IE]&#62;
+                &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+                &#60;![endif]--&#62;
+                    &#60;!--[if mso | IE]&#62;
+                &#60;table role="presentation" border="0" cellpadding="0" cellspacing="0" width="640" align="center" style="width:640px;"&#62;
+                  &#60;tr&#62;
+                    &#60;td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"&#62;
+                &#60;![endif]--&#62;
+                &#60;/div&#62;
+                &#60;div style="margin:0px auto;max-width:640px;background:transparent;"&#62;
+                    &#60;table role="presentation" cellpadding="0" cellspacing="0"
+                        style="font-size:0px;width:100%;background:transparent;" align="center" border="0"&#62;
+                        &#60;tbody&#62;
+                            &#60;tr&#62;
+                                &#60;td style="text-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:0px;"&#62;&#60;!--[if mso | IE]&#62;
+                &#60;table role="presentation" border="0" cellpadding="0" cellspacing="0"&#62;&#60;tr&#62;&#60;td style="vertical-align:top;width:640px;"&#62;
+                &#60;![endif]--&#62;
+                                    &#60;div aria-labelledby="mj-column-per-100" class="mj-column-per-100 outlook-group-fix"
+                                        style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;"&#62;
+                                        &#60;table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0"&#62;
+                                            &#60;tbody&#62;
+                                                &#60;tr&#62;
+                                                    &#60;td style="word-break:break-word;font-size:0px;"&#62;
+                                                        &#60;div&#62; style="font-size:1px;line-height:12px;"&#62;&nbsp;&#60;/div&#62;
+                                                    &#60;/td&#62;
+                                                &#60;/tr&#62;
+                                            &#60;/tbody&#62;
+                                        &#60;/table&#62;
+                                    &#60;/div&#62;&#60;!--[if mso | IE]&#62;
+                &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+                &#60;![endif]--&#62;
+                                &#60;/td&#62;
+                            &#60;/tr&#62;
+                        &#60;/tbody&#62;
+                    &#60;/table&#62;
+                &#60;/div&#62;&#60;!--[if mso | IE]&#62;
+                &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+                &#60;![endif]--&#62;
+                &#60;!--[if mso | IE]&#62;
+                &#60;table role="presentation" border="0" cellpadding="0" cellspacing="0" width="640" align="center" style="width:640px;"&#62;
+                  &#60;tr&#62;
+                    &#60;td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"&#62;
+                &#60;![endif]--&#62;
+                &#60;div
+                    style="margin:0 auto;max-width:640px;background:#ffffff;box-shadow:0px 1px 5px rgba(0,0,0,0.1);border-radius:4px;overflow:hidden;"&#62;
+                    &#60;table cellpadding="0" cellspacing="0" style="font-size:0px;width:100%;background:#ffffff;" align="center"
+                        border="0"&#62;
+                        &#60;tbody&#62;
+                            &#60;tr&#62;
+                                &#60;td style="text-align:center;vertical-align:top;font-size:0px;padding:0px;"&#62;&#60;!--[if mso | IE]&#62;
+                &#60;table border="0" cellpadding="0" cellspacing="0"&#62;&#60;tr&#62;&#60;td style="vertical-align:top;width:640px;"&#62;
+                &#60;![endif]--&#62;
+                                    &#60;div aria-labelledby="mj-column-per-100" class="mj-column-per-100 outlook-group-fix"
+                                        style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;"&#62;
+                                        &#60;table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0"&#62;
+                                            &#60;tbody&#62;
+                                                &#60;tr&#62;
+                                                    &#60;td style="word-break:break-word;font-size:0px;padding:30px 70px 0px 70px;"
+                                                        align="center"&#62;
+                                                        &#60;div&#62;
+                                                            style="cursor:auto;color:#43B581;font-family:Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-size:18px;font-weight:bold;line-height:16px;text-align:center;"&#62;
+                                                            FUN FACT #16&#60;/div&#62;
+                                                    &#60;/td&#62;
+                                                &#60;/tr&#62;
+                                                &#60;tr&#62;
+                                                    &#60;td style="word-break:break-word;font-size:0px;padding:14px 70px 30px 70px;"
+                                                        align="center"&#62;
+                                                        &#60;div&#62;
+                                                            style="cursor:auto;color:#737F8D;font-family:Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-size:16px;line-height:22px;text-align:center;"&#62;
+                                                            In Hearthstone, using the Hunter card Animal Companion against
+                                                            Kel'Thuzad will summon his cat Mr. Bigglesworth rather than the
+                                                            usual beasts.
+                                                        &#60;/div&#62;
+                                                    &#60;/td&#62;
+                                                &#60;/tr&#62;
+                                            &#60;/tbody&#62;
+                                        &#60;/table&#62;
+                                    &#60;/div&#62;&#60;!--[if mso | IE]&#62;
+                &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+                &#60;![endif]--&#62;
+                                &#60;/td&#62;
+                            &#60;/tr&#62;
+                        &#60;/tbody&#62;
+                    &#60;/table&#62;
+                &#60;/div&#62;&#60;!--[if mso | IE]&#62;
+                &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+                &#60;![endif]--&#62;
+                &#60;!--[if mso | IE]&#62;
+                &#60;table role="presentation" border="0" cellpadding="0" cellspacing="0" width="640" align="center" style="width:640px;"&#62;
+                  &#60;tr&#62;
+                    &#60;td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"&#62;
+                &#60;![endif]--&#62;
+                &#60;div style="margin:0px auto;max-width:640px;background:transparent;"&#62;
+                    &#60;table role="presentation" cellpadding="0" cellspacing="0"
+                        style="font-size:0px;width:100%;background:transparent;" align="center" border="0"&#62;
+                        &#60;tbody&#62;
+                            &#60;tr&#62;
+                                &#60;td style="text-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:20px 0px;"&#62;&#60;!--[if mso | IE]&#62;
+                &#60;table role="presentation" border="0" cellpadding="0" cellspacing="0"&#62;&#60;tr&#62;&#60;td style="vertical-align:top;width:640px;"&#62;
+                &#60;![endif]--&#62;
+                                    &#60;div aria-labelledby="mj-column-per-100" class="mj-column-per-100 outlook-group-fix"
+                                        style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;"&#62;
+                                        &#60;table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0"&#62;
+                                            &#60;tbody&#62;
+                                                &#60;tr&#62;
+                                                    &#60;td style="word-break:break-word;font-size:0px;padding:0px;" align="center"&#62;
+                                                        &#60;div
+                                                            style="cursor:auto;color:#99AAB5;font-family:Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-size:12px;line-height:24px;text-align:center;"&#62;
+                                                            Sent by Discord • &#60;a&#62; href="https://blog.discordapp.com/"
+                                                                style="color:#1EB0F4;text-decoration:none;"
+                                                                target="_blank"&#62;check our blog&#60;/a&#62; • &#60;a&#62;
+                                                                href="https://twitter.com/discordapp"
+                                                                style="color:#1EB0F4;text-decoration:none;"
+                                                                target="_blank"&#62;@discordapp&#60;/a&#62;
+                                                        &#60;/div&#62;
+                                                    &#60;/td&#62;
+                                                &#60;/tr&#62;
+                                                &#60;tr&#62;
+                                                    &#60;td style="word-break:break-word;font-size:0px;padding:0px;" align="center"&#62;
+                                                        &#60;div&#62;
+                                                            style="cursor:auto;color:#99AAB5;font-family:Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-size:12px;line-height:24px;text-align:center;"&#62;
+                                                            444 De Haro Street, Suite 200, San Francisco, CA 94107
+                                                        &#60;/div&#62;
+                                                    &#60;/td&#62;
+                                                &#60;/tr&#62;
+                                            &#60;/tbody&#62;
+                                        &#60;/table&#62;
+                                    &#60;/div&#62;&#60;!--[if mso | IE]&#62;
+                &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+                &#60;![endif]--&#62;
+                                &#60;/td&#62;
+                            &#60;/tr&#62;
+                        &#60;/tbody&#62;
+                    &#60;/table&#62;
+                &#60;/div&#62;&#60;!--[if mso | IE]&#62;
+                &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+                &#60;![endif]--&#62;
+            &#60;/div&#62;
+        
+        &#60;/body&#62;
+        `
+        }
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+
+                                <div class="col-md-6 mb-5">
+                                        
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Services &#62; email.js
+    //-------------------------------------------------------------------------
+
+    // I Use nodemailer For Send Email to User  
+    
+    // For install nodemailer &#62;&#62; npm i nodemailer
+
+    import nodemailer from "nodemailer";
+    import { html } from "./email-template.js";
+    import  jwt  from "jsonwebtoken";
+    
+    
+    export const sendEmail = async (options)=>{
+    
+        let transporter = nodemailer.createTransport({
+            service:"gmail",
+            auth: {
+              user: "megaman.programingtest@gmail.com",
+              pass: "emailPassword"
+            },
+            tls:{
+              rejectUnauthorized: false
+            }
+          });
+    
+          let token = jwt.sign({email:options.email},process.env.Email_KEY_TOKEN)
+    
+          let info = await transporter.sendMail({
+            from: '"Saraha App 👻" <megaman.programingtest@gmail.com>',
+            to: options.email,
+            subject: "Send ✔",
+            html: html(token)
+          });
+    }
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+
+                                <div class="col-md-6">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; Users &#62; controller &#62; user.controller.js
+    //-------------------------------------------------------------------------
+
+    import userModel from '../../../../DB/models/user.model.js'
+
+    import { sendEmail } from '../../../Services/email.js';
+    
+    import bcrypt from "bcrypt";
+
+    //-----------------------------------------------------------------------------
+    
+    export const signUp = async (req,res,next)=>{
+    
+        let {name,age,email,password,CPassword} = req.body;
+        
+        if (password != CPassword) return res.json ({message:"Password Not Equal Confirmed Password"})
+    
+        let foundedUser = await userModel.findOne({email})
+    
+        if(foundedUser) return next(new AppError("User Already Register",400))
+    
+        let hashedPassword = bcrypt.hashSync(password,parseInt(process.env.HASH_ROUNDED))
+    
+        let addUser = await userModel.insertMany({name,age,email,password:hashedPassword})
+        
+        sendEmail({email});
+    
+        res.status(201).json({message:"User Added",addUser})
+    
+    }
+    
+    //-----------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------
+
+    export const verify = async (req,res,next)=>{
+
+        let {token} = req.params;
+        
+        jwt.verify(token,process.env.Email_KEY_TOKEN, async (err,decoded)=>{
+
+            if (err) return res.json({message:"Invalid Token"})
+
+            let VEUpdated = await userModel.findOneAndUpdate({email:decoded.email},{confirmedEmail:true},{new:true});
+            
+            VEUpdated.password = undefined
+            
+            res.json({message:"The Mail Verified",VEUpdated})
+        })
+    }
+
+    //-----------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------
+    
+    import jwt from 'jsonwebtoken'
+    
+    export const signIn = async (req,res,next)=>{
+            
+        let {email,password} = req.body;
+    
+        let foundedUser = await userModel.findOne({email})
+        
+        if(!foundedUser) return res.json({message:"Email Not Found, You Have To Register First"})
+        
+        let passMatched = bcrypt.compareSync(password , foundedUser.password)
+    
+        if(!passMatched) return res.json ({message:"Incorrect Password"})
+    
+        let token = jwt.sign({userID:foundedUser._id, name:foundedUser.name},process.env.KEY_TOKEN,{expiresIn: '24h'});
+    
+        res.status(200).json ({message:"LogIn Success",token})
+    
+    }
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+        
+                    
+                                <div class="col-md-6">
+                    
+                                        
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; Users &#62; user.router.js
+    //-------------------------------------------------------------------------
+
+    import  express  from "express";
+    const router = express.Router();
+    export default router;
+    
+    import { getAllUsers , signUp , verify , signIn} from "./controller/user.controller.js";
+        
+    router.post("/signUp",signUp)
+    
+    router.get("/verify/:token",verify)
+    
+    router.post("/signIn",signIn)
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </section>
+
+                <!-- slugify ------------------------------------------------------------------------------>
+
+                <section class="my-5 p-md-5 p-3 mega">
+                    <div class="btnDiv d-flex justify-content-start align-items-center">
+                        <button id="btn-5"class="border-0 bg-transparent text-danger fs-2 mb-0"
+                            onclick="changeScope(5)">&#62;&#62;&#62;</button>
+                        <label for="btn-5"style="cursor: pointer;">
+                            <h2 class="mb-0">* slugify : </h2>
+                        </label>
+                    </div>
+
+                    <div id="button5"class="my-5 d-none">
+
+                        <div>
+                            <div class="row">
+                                            
+                                <div class="col-md-6">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; Database &#62; Models &#62; Users &#62; subCategory.model.js
+    //-------------------------------------------------------------------------
+
+    import mongoose from 'mongoose';
+
+    const subCategorySchema = new mongoose.Schema({
+        name: {
+            type:String,
+            unique:true,
+            trim:true,
+            required:[true, "Sub Category Name Required" ],
+        },
+    
+        slug:{
+            type:String,
+            lowercase:true,
+            require:true
+        },
+    
+        category:{
+    
+            type: mongoose.Types.ObjectId,
+            ref:"Category"
+        },
+    
+        },{
+        timestamps:true
+    })
+    
+    const subCategoryModel = mongoose.model("subCategory",subCategorySchema)
+    export default subCategoryModel
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+        
+                    
+                                <div class="col-md-6">
+                    
+                                        
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; subCategory &#62; controller &#62; subCategory.controller.js
+    //-------------------------------------------------------------------------
+
+    // I Use slugify For rename element  
+    
+    // For install slugify &#62;&#62; npm i slugify
+
+    import slugify from 'slugify'
+    
+    import subCategoryModel from '../../../../Database/models/subCategory.model.js';
+    
+    //--------------------------------------------------------------------------
+    
+    const createSupCategory = async (req,res,next,err)=>{
+    
+        let {name , categoryID} = req.body;
+    
+        let results = new subCategoryModel( { name , slug : slugify( name ) , category : categoryID } );
+    
+        await results.save()
+    
+        res.status(201).json({message: "Sub Category Created" , results})
+    
+    }
+    
+    //--------------------------------------------------------------------------
+    
+    const updateSupCategory = async (req,res,next)=>{
+    
+        let {id} = req.params
+    
+        let {name , categoryID} = req.body;
+    
+        let results = await subCategoryModel.findByIdAndUpdate( id ,{ name , slug: slugify( name )  , category : categoryID },{new:true})
+        
+        results && res.status(200).json({message: `Sub Category Name Updated To ${results.name}` , results})
+    
+    }
+    
+    //--------------------------------------------------------------------------
+    
+    export{
+    
+        createSupCategory,
+    
+        updateSupCategory
+
+    }
+    
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </section>
+
+                <!-- cors ------------------------------------------------------------------------------>
+
+                <section class="my-5 p-md-5 p-3 mega">
+                    <div class="btnDiv d-flex justify-content-start align-items-center">
+                        <button id="btn-6"class="border-0 bg-transparent text-danger fs-2 mb-0"
+                            onclick="changeScope(6)">&#62;&#62;&#62;</button>
+                        <label for="btn-6"style="cursor: pointer;">
+                            <h2 class="mb-0">* cors : </h2>
+                        </label>
+                    </div>
+
+                    <div id="button6"class="my-5 d-none">
+
+                        <div>
+                            <div class="row">
+                                            
+                                <div class="col-md-12">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; index.js
+    //-------------------------------------------------------------------------
+
+    // I Use cors If FE & BE Not Use The Sae Port  
+    
+    // For install Joi &#62;&#62; npm i cors
+
+    import cors from 'cors'
+
+    import express from 'express'
+    const app = express()
+    const port = 3000
+
+    app.use(express.json())
+
+    app.use(cors())
+
+    app.listen(port, () => console.log(`>>> MEGA | Voting-App | Listening on Port ${port}!`))
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </section>
+
+                <!-- morgan ---------------------------------------------------------------------------->
+
+                <section class="my-5 p-md-5 p-3 mega">
+                    <div class="btnDiv d-flex justify-content-start align-items-center">
+                        <button id="btn-7"class="border-0 bg-transparent text-danger fs-2 mb-0"
+                            onclick="changeScope(7)">&#62;&#62;&#62;</button>
+                        <label for="btn-7"style="cursor: pointer;">
+                            <h2 class="mb-0">* morgan : </h2>
+                        </label>
+                    </div>
+
+                    <div id="button7"class="my-5 d-none">
+
+                        <div>
+                            <div class="row">
+                                            
+                                <div class="col-md-12">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; index.js
+    //-------------------------------------------------------------------------
+
+    // I Use morgan For get info about Api Call  
+    
+    // For install Joi &#62;&#62; npm i morgan
+
+    import morgan from "morgan";
+
+    import express from 'express'
+    const app = express()
+    const port = 3000
+
+    app.use(express.json())
+
+    app.use(morgan("dev"));
+
+    app.listen(port, () => console.log(`>>> MEGA | Voting-App | Listening on Port ${port}!`))
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </section>
+
+                <!-- qrcode ---------------------------------------------------------------------------->
+
+                <section class="my-5 p-md-5 p-3 mega">
+                    <div class="btnDiv d-flex justify-content-start align-items-center">
+                        <button id="btn-8"class="border-0 bg-transparent text-danger fs-2 mb-0"
+                            onclick="changeScope(8)">&#62;&#62;&#62;</button>
+                        <label for="btn-8"style="cursor: pointer;">
+                            <h2 class="mb-0">* qrcode : </h2>
+                        </label>
+                    </div>
+
+                    <div id="button8"class="my-5 d-none">
+
+                        <div>
+                            <div class="row">
+                                            
+                                <div class="col-md-12 mb-5">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; Database &#62; Models &#62; coupon.model.js
+    //-------------------------------------------------------------------------
+
+    import mongoose from 'mongoose';
+
+    const couponSchema = new mongoose.Schema({
+        code: {
+            type:String,
+            trim:true,
+            required:[true, "Code Required"],
+            unique:true
+        },
+        discount:{
+            type:Number,
+            min:0,
+            required:[true, "Discount Required"]
+        },
+        expiration:{
+            type:Date,
+            required:[true, "Expiration Date Required"]
+        },
+    
+        },{
+        timestamps:true
+    })
+    
+    const couponModel = mongoose.model("Coupon",couponSchema)
+    export default couponModel
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-6">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; coupon &#62; controller &#62; coupon.Controller.js
+    //-------------------------------------------------------------------------
+
+    // I Use QRCode For create QRCode  
+    
+    // For install QRCode &#62;&#62; npm i qrcode
+
+    import QRCode from 'qrcode'
+    
+    import couponModel from '../../../../Database/Models/coupon.model.js';
+    
+    //--------------------------------------------------------------------------
+    
+    const createCoupon = async (req,res,next,err)=>{    
+      
+        console.log(req.body);
+        let results = new couponModel( req.body );
+    
+        await results.save()
+    
+        res.status(201).json({message: "Coupon Created" , results})
+    
+    }
+    
+    //--------------------------------------------------------------------------
+    
+    const getCouponByID = async (req,res,next)=>{
+    
+        let {id} = req.params
+    
+        let results = await couponModel.findOne({_id:id})
+        
+        !results && next (new AppError("Coupon Not Found",404))
+    
+        // let QR_Code_Url = await QRCode.toDataURL("Any thing you want convert it to QR Code")
+    
+        let QR_Code_Url = await QRCode.toDataURL(results.code)
+    
+        results && res.status(200).json({message: `Coupon ID : ${id}` , results , QR_Code_Url})
+    
+    }
+    
+    //--------------------------------------------------------------------------
+    
+    export{
+    
+        createCoupon,
+            
+        getCouponByID
+    }
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-6">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; coupon &#62; coupon.route.js
+    //-------------------------------------------------------------------------
+
+    import express  from "express";
+    import { createCoupon , getCouponByID } from "./controller/coupon.Controller.js";
+    
+    //--------------------------------------------------------------------------
+    
+    const couponRouter = express.Router();
+    
+    //--------------------------------------------------------------------------
+    
+    couponRouter.route("/")
+        
+        .post(createCoupon);
+    
+    
+    
+    couponRouter.route("/:id")
+    
+        .get(getCouponByID);
+        
+    //--------------------------------------------------------------------------
+    
+    export default couponRouter;
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </section>
+
+                <!-- multer / nanoid ---------------------------------------------------------------------------->
+
+                <section class="my-5 p-md-5 p-3 mega">
+                    <div class="btnDiv d-flex justify-content-start align-items-center">
+                        <button id="btn-9"class="border-0 bg-transparent text-danger fs-2 mb-0"
+                            onclick="changeScope(9)">&#62;&#62;&#62;</button>
+                        <label for="btn-9"style="cursor: pointer;">
+                            <h2 class="mb-0">* multer / nanoid : </h2>
+                        </label>
+                    </div>
+
+                    <div id="button9"class="my-5 d-none">
+
+                        <div>
+                            <div class="row">
+                                            
+                                <div class="col-md-12 mb-5">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; Database &#62; Models &#62; photos.model.js
+    //-------------------------------------------------------------------------
+
+    import mongoose from 'mongoose';
+
+    const photoSchema = new mongoose.Schema({
+
+        path:String,
+    
+        createdBy:{
+            type: mongoose.Types.ObjectId,
+            ref:"User",
+        },
+    
+        totalVote:{
+            type:Number,
+            default:0
+        },
+    
+        upIDs:[{
+            type: mongoose.Types.ObjectId,
+            ref:"User",
+        }],
+    
+        downIDs:[{
+            type: mongoose.Types.ObjectId,
+            ref:"User",
+        }],
+    
+    },{
+        timestamps:true
+    })
+    
+    const photoModel = mongoose.model("photo",photoSchema)
+    
+    export default photoModel
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-12 mb-5">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; index.js
+    //-------------------------------------------------------------------------
+    
+    import express from 'express'
+    const app = express()
+    const port = 3000
+
+    app.use(express.json())
+
+    // Create uploads Folder For Save File uploads
+    // Path of Folder project &#62; uploads
+
+    app.use(express.static("uploads"))
+    // For Show img From Browser Enter URL : http://localhost:3000/iIxXSh-23FVMi49zSZGi2_2222.jpg
+    
+    app.use('/uploads',(express.static("uploads")))
+    // For Show img From Browser Enter URL : http://localhost:3000/uploads/iIxXSh-23FVMi49zSZGi2_2222.jpg
+    
+    app.listen(port, () => console.log(`>>> MEGA | Voting-App | Listening on Port ${port}!`))
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+
+                                <div class="col-md-12 mb-5">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; utilities &#62; fileUploader.js
+    //-------------------------------------------------------------------------
+
+    // I Use multer For Upload Files From User To Server Or Cloud
+    
+    // For install multer &#62;&#62; npm i multer
+
+    import multer from "multer"
+
+    // I Use nanoid For For change Name Of File Upload
+    
+    // For install nanoid &#62;&#62; npm i nanoid
+
+    import { nanoid } from 'nanoid'
+    
+
+    // in case i use Local storage
+    //-------------------------------
+
+    export const fileUpload = () => {
+
+        const storage = multer.diskStorage({
+    
+            // For Upload File To Destination Folder 
+            //--------------------------------------------
+
+            destination: function (req, file, cb) {
+    
+              cb(null, 'uploads')
+    
+            },
+    
+            // For Rename File i received it
+            //---------------------------------
+
+            filename: function (req, file, cb) {
+    
+              // // - For Create New Name For Every File from multer
+    
+              // // - Created New Name Without extension
+    
+              // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+    
+              // cb(null, uniqueSuffix + '-' + file.originalname)
+    
+              // // Or --------------------------------------------------------------
+    
+              // // - For Save File By originalname and use nano id for add random name
+    
+              cb(null, nanoid() + "_" + file.originalname)
+    
+            }
+    
+        });
+    
+        // For Select Type Of File i can received
+        //------------------------------------------
+
+        function fileFilter (req, file, cb) {
+      
+          const acceptedFilesType = ["image/png","image/jpeg","video/mp4"]
+      
+          let accepted = acceptedFilesType.find((ele) => file.mimetype.startsWith(ele))
+            
+          if (accepted) return cb(null, true)
+      
+          cb(null, false)
+        
+        }
+    
+      const upload = multer({ storage: storage , fileFilter })
+    
+      return upload.single("photoImg")
+    
+      // photoImg : Key Of Img i Received
+    
+    }
+    
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-6">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; controller &#62; photos.controller.js
+    //-------------------------------------------------------------------------
+
+    import photoModel from "../../../../DB/models/photos.model.js";
+    
+    // In Case Uploaded File Local :
+    // ------------------------------
+    
+    export const addPhoto = async (req,res,next)=>{
+
+        let {createdBy} = req.body;
+
+        console.log(req.file);
+
+        // in case i use array of img (Not Single img)
+
+        // console.log(req.files);
+
+        await photoModel.insertMany ({path:req.file.filename,createdBy});
+
+        if (!req.file) return res.status(400).json({message:"Invalid File"})
+
+        res.status(201).json({message:"Add Photo Done"})
+
+    }
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-6">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; photos.router.js
+    //-------------------------------------------------------------------------
+
+
+    import  express  from "express";
+    import { addPhoto } from "./controller/photos.controller.js";
+    import { fileUpload } from "../../utilities/fileUploader.js";
+
+    const router = express.Router();
+
+    export default router;
+    
+    
+    router.post("/addPhoto",fileUpload(),addPhoto)
+       
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </section>
+                
+                <!-- cloudinary ---------------------------------------------------------------------------->
+
+                <section class="my-5 p-md-5 p-3 mega">
+                    <div class="btnDiv d-flex justify-content-start align-items-center">
+                        <button id="btn-10"class="border-0 bg-transparent text-danger fs-2 mb-0"
+                            onclick="changeScope(10)">&#62;&#62;&#62;</button>
+                        <label for="btn-10"style="cursor: pointer;">
+                            <h2 class="mb-0">* cloudinary : </h2>
+                        </label>
+                    </div>
+
+                    <div id="button10"class="my-5 d-none">
+
+                        <div>
+                            <div class="row">
+                                            
+                                <div class="col-md-12 mb-5">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; Database &#62; Models &#62; photos.model.js
+    //-------------------------------------------------------------------------
+
+    import mongoose from 'mongoose';
+
+    const photoSchema = new mongoose.Schema({
+
+        path:String,
+    
+        createdBy:{
+            type: mongoose.Types.ObjectId,
+            ref:"User",
+        },
+    
+        totalVote:{
+            type:Number,
+            default:0
+        },
+    
+        upIDs:[{
+            type: mongoose.Types.ObjectId,
+            ref:"User",
+        }],
+    
+        downIDs:[{
+            type: mongoose.Types.ObjectId,
+            ref:"User",
+        }],
+    
+    },{
+        timestamps:true
+    })
+    
+    const photoModel = mongoose.model("photo",photoSchema)
+    
+    export default photoModel
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-12 mb-5">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; index.js
+    //-------------------------------------------------------------------------
+    
+    import express from 'express'
+    const app = express()
+    const port = 3000
+
+    app.use(express.json())
+
+    // Create uploads Folder For Save File uploads
+    // Path of Folder project &#62; uploads
+
+    app.use(express.static("uploads"))
+    // For Show img From Browser Enter URL : http://localhost:3000/iIxXSh-23FVMi49zSZGi2_2222.jpg
+    
+    app.use('/uploads',(express.static("uploads")))
+    // For Show img From Browser Enter URL : http://localhost:3000/uploads/iIxXSh-23FVMi49zSZGi2_2222.jpg
+    
+    app.listen(port, () => console.log(`>>> MEGA | Voting-App | Listening on Port ${port}!`))
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-12 mb-5">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; utilities &#62; cloudinary.js
+    //-------------------------------------------------------------------------
+
+    // I Use cloudinary For Upload Files From User To Cloud
+    
+    // For install cloudinary &#62;&#62; npm i cloudinary
+
+    import cloudinary from 'cloudinary';
+
+    // Configuration 
+
+    cloudinary.v2.config({
+        cloud_name: 'djnvtnwar',
+        api_key: '396353482757213',
+        api_secret: 'RvREG_EB-srEAR5rxvsmbZn20YU',
+        secure:true
+    });
+
+
+    export default cloudinary.v2
+  
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-12 mb-5">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; utilities &#62; fileUploader.js
+    //-------------------------------------------------------------------------
+
+    // I Use multer For Upload Files From User To Server Or Cloud
+    
+    // For install multer &#62;&#62; npm i multer
+
+    import multer from "multer"
+    
+    
+    // in case i use cloud
+    //----------------------
+    
+    
+    export const fileUpload = () => {
+    
+      const storage = multer.diskStorage({/* I Set This Command For Make Uploaded Process */});
+      
+    
+      function fileFilter (req, file, cb) {
+    
+        const acceptedFilesType = ["image/png","image/jpeg","video/mp4"]
+    
+        let accepted = acceptedFilesType.find((ele) => file.mimetype.startsWith(ele))
+          
+        if (accepted) return cb(null, true)
+    
+        cb(null, false)
+      
+      }
+    
+      const upload = multer({ storage: storage , fileFilter })
+    
+      return upload.single("photoImg")
+    
+      // photoImg : Key Of Img i Received
+    
+    }
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-6">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; controller &#62; photos.controller.js
+    //-------------------------------------------------------------------------
+
+    import photoModel from "../../../../DB/models/photos.model.js";
+    
+    import cloudinary from "../../../utilities/cloudinary.js";
+
+
+    // In Case Uploaded File on Cloud :
+    // ---------------------------------------
+    
+    export const addPhoto = async (req,res,next)=>{
+
+        // // If I Upload one File (single)
+    
+        // console.log(file);
+    
+        // // If I Upload more than one File (array)
+          
+        // console.log(files);
+    
+        if (!req.file) return res.status(400).json({message:"Invalid File"})
+    
+        let {createdBy} = req.body;
+    
+        let {secure_url} = await cloudinary.uploader.upload(req.file.path,{folder:"Mega-Voting"})
+    
+        console.log(secure_url);
+    
+        await photoModel.insertMany ({path:secure_url,createdBy});
+    
+        res.status(201).json({message:"Add Photo Done"})
+    
+    }
+
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-6">
+                    
+                    
+                                    <div class="border">
+                                        <h5 class="m-0">  
+                                            <pre style="height: 600px;" class="m-0">
+<code>
+
+    // project &#62; src &#62; Api &#62; photos.router.js
+    //-------------------------------------------------------------------------
+
+
+    import  express  from "express";
+    import { addPhoto } from "./controller/photos.controller.js";
+    import { fileUpload } from "../../utilities/fileUploader.js";
+
+    const router = express.Router();
+
+    export default router;
+    
+    
+    router.post("/addPhoto",fileUpload(),addPhoto)
+       
+</code>
+                                            </pre>
+                                        </h5>
+                                    </div>
+                                    
+                                </div>
+                    
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </section>
+
+                <!------------------------------------------------------------------------------------------------------------------------------------>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+
+            </div>
+
+        </main>
+
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+
+            </div>
+
+        </main>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Footer -->
+        <!------------>
+
+        <footer id="contact" class="py-5 bg-black text-white">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+
+                        <h4 class="mb-4 pb-4 border-bottom">Author :</h4>
+
+                        <h1>M O H A M E D</h1>
+                        
+                        <h1>M A G D Y</h1>
+    
+                    </div>
+    
+                    <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+    
+                        <h4 class="mb-4 pb-4 border-bottom">Contact :</h4>
+
+                        <h6><a href="mailto:Eng.M.Ezzeldeen@gmail.com" class="a_None text-white">Email: Eng.M.Ezzeldeen@gmail.com</a></h6>  
+
+                        <button class="bg-transparent text-white border-0 p-0" onclick="openLink('wa.me/+201285880488')"><h6 class="mb-0">Phone : +20 12 858 80 4 88</h6></button>    
+                        
+                        <div class="d-flex justify-content-start my-3">
+        
+                            <button onclick="openLink('github.com/Eng-M-Ma9dy')" class="SM-BTN-icon GitHub    me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-github"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.linkedin.com/in/eng-m-ma9dy/')" class="SM-BTN-icon LinkedIn  mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </button>
+        
+                            <button onclick="openLink('www.facebook.com/eng.m.ma9dy/')" class="SM-BTN-icon Facebook  mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.instagram.com/eng.m.ma9dy/')" class="SM-BTN-icon Instagram ms-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-instagram"></i>
+                            </button>
+                
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+    
+                        <h4 class="mb-4 pb-4 border-bottom">My Pages :</h4>
+
+                        <h6><a href="mailto:Info.Unit.Alex@gmail.com" class="a_None text-white">Info.Unit.Alex@gmail.com</a></h6>  
+
+                        <button class="bg-transparent text-white border-0 p-0" onclick="openLink('wa.me/+201140155633')"><h6 class="mb-0">Phone : +20 11 40 155 6 33</h6></button>    
+                        
+                        <div class="text-light d-flex justify-content-start my-3">
+        
+                            <button onclick="openLink('www.facebook.com/info.unit.iu/')" class="SM-BTN-icon Facebook  me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                                            
+                            <button onclick="openLink('www.tiktok.com/@info.unit.iu')" class="SM-BTN-icon TikTok    mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.instagram.com/info.unit.iu')" class="SM-BTN-icon Instagram mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-instagram"></i>
+                            </button>
+
+                            <button onclick="openLink('youtube.com/@Info.Unit-IU')" class="SM-BTN-icon Youtube   ms-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-youtube"></i>
+                            </button>
+                
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 mt-3 mt-lg-0 d-none d-md-flex justify-content-start justify-content-xl-center">
+
+                        <button class="bg-transparent text-white border-0 p-0" onclick="openLink('eng-m-ma9dy.github.io/Portfolio/')"><img src="../src/Images/Logo-MM.jpg" class="footer_logo rounded-circle" alt=""></button>
+            
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- JS Links -->
+        <!-------------->
+        
+        <!-- Offline Bootstrap js : -->
+        <script src="../JS/bootstrap.bundle.min.js"></script>
+
+        <!-- jQuery js : -->
+        <script src="../JS/jquery-3.6.3.min.js"></script>
+
+        <!-- My Shared js : -->
+        <script src="../JS/shared.js"></script>
+    
+    </body>
+</html>

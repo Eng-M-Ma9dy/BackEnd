@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Eng: Mohamed Magdy Mettwally">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The Reference For Back-End Developers, It's Contain All Code The Developers use in coding, Node.js, SQL DB (Sequelize), MongoDB (Mongoose), APIs,GraphQL, Socket.io, Ajax">
+        <meta name="keywords" content="Node.js Database SQL Sequelize MongoDB Mongoose APIs GraphQL Socket.io Ajax Coding Developers Back-End">
+    
+        <title>SQL DB</title>
+        <meta property="og:image" content="./../src/Images/Logo-MM-Cover.jpg">
+        <link rel="website icon" type="PNG" href="./../src/Images/Logo-MM-Title.png">
+
+        <!-- Offline Bootstrap CSS : -->
+        <link href="../CSS/bootstrap.min.css" rel="stylesheet"/>
+
+        <!-- FontAwesome CSS : -->
+        <link href="../CSS/all.min.css" rel="stylesheet"/>
+                
+        <!-- My Shared CSS : -->
+        <link href="../CSS/shared.css" rel="stylesheet"/>
+
+    </head>
+
+    <body>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Loader -->
+        <!------------>
+
+        <div id="myLoading">
+
+            <!---------------------------------------------------------------->
+    
+            <div id="loadingDiv" class="d-flex justify-content-center align-items-center">
+                <div id="loaderDiv" class="loader--style6" title="5">
+                    <svg id="loaderSize" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px"
+                        viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                        <rect x="0" y="13" width="4" height="5" fill="blue">
+                            <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0s" dur="0.6s"
+                                repeatCount="indefinite" />
+                            <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0s" dur="0.6s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <rect x="10" y="13" width="4" height="5" fill="white">
+                            <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.15s" dur="0.6s"
+                                repeatCount="indefinite" />
+                            <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.15s" dur="0.6s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <rect x="20" y="13" width="4" height="5" fill="blue">
+                            <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.3s" dur="0.6s"
+                                repeatCount="indefinite" />
+                            <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.3s" dur="0.6s"
+                                repeatCount="indefinite" />
+                        </rect>
+                    </svg>
+                </div>
+            </div>
+    
+            <!---------------------------------------------------------------->
+    
+        </div>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Header -->
+        <!------------>
+
+        <header id="headerSection" class="w-100 vh-100 mb-1">
+
+            <div id="headerDiv" class="overflow-hidden position-relative">
+
+                <svg id="svg_white" viewBox="0 0 1440 320">
+                    <path fill="white" fill-opacity="1" d="M0,0L24,16C48,32,96,64,144,80C192,96,240,96,288,80C336,64,384,32,432,48C480,64,528,128,576,144C624,160,672,128,720,133.3C768,139,816,181,864,197.3C912,213,960,203,1008,208C1056,213,1104,235,1152,245.3C1200,256,1248,256,1296,250.7C1344,245,1392,235,1416,229.3L1440,224L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path>
+                </svg>
+
+                <svg id="svg_blueviolet" viewBox="0 0 1440 320">
+                    <path fill="blueviolet" fill-opacity="1" d="M0,0L24,16C48,32,96,64,144,80C192,96,240,96,288,80C336,64,384,32,432,48C480,64,528,128,576,144C624,160,672,128,720,133.3C768,139,816,181,864,197.3C912,213,960,203,1008,208C1056,213,1104,235,1152,245.3C1200,256,1248,256,1296,250.7C1344,245,1392,235,1416,229.3L1440,224L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path>
+                </svg>
+
+                <div id="headerDiv_Content" class="d-flex flex-column justify-content-center align-items-start">
+
+    
+                    <div class="ms-3 text-white">
+
+                        <h4>Back End..</h4>
+                        <h1 id="theMainTitle" class="fw-bold">SQL Database</h1>
+                        <h5 class="text-end">Server</h5>
+
+                    </div>
+                                
+                    <div>
+                        <div class="d-flex justify-content-start ms-3 mb-3">
+        
+                            <div class="rotating-text">
+                    
+                                <p class="kf text-light">I'm a </p>
+                    
+                                <p>
+                                    <span class="word w-1">     M.Magdy    </span>
+                                    <span class="word w-2">     Full-Stack </span>
+                                    <span class="word w-3">     Developer  </span>
+                                </p>
+                            
+                            </div>
+        
+                        </div>
+        
+                        <div class="text-light ms-3 d-flex justify-content-start">
+                
+                            <button onclick="openLink('www.linkedin.com/in/eng-m-ma9dy/')" class="SM-BTN-icon LinkedIn rounded-circle me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </button>
+        
+                            <button onclick="openLink('github.com/Eng-M-Ma9dy')" class="SM-BTN-icon GitHub rounded-circle mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-github"></i>
+                            </button>
+        
+                            <button onclick="openLink('www.facebook.com/eng.m.ma9dy/')" class="SM-BTN-icon Facebook rounded-circle mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.instagram.com/eng.m.ma9dy/')" class="SM-BTN-icon Instagram rounded-circle mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-instagram"></i>
+                            </button>
+                
+                        </div>
+                        
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </header>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Main -->
+        <!---------->
+
+        <main id="mainSection" class="text-white mb-1">
+        
+            <div id="mainDiv" class="py-5">
+
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+    
+    <div class="mt-5">
+        <button id="homeBTN" onclick="openLink('eng-m-ma9dy.github.io/BackEnd/')" class="border-0 mx-auto text-white bg-primary fs-1 d-flex justify-content-center align-items-center">
+            <i class="px-2 border-0 fa-solid fa-house-chimney"></i> <span id="homeText" class="d-none">Home</span>
+        </button>
+    </div>
+
+
+
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-12">
+
+                <h2 class="my-5  text-center">( <span class="text-primary">SQL <span class="text-white">-</span> Database</span> ) </h2>
+
+                <!------------------------------------------------------------------------------------->
+
+                <section>
+                    <div class="border">
+                        <h5 class="m-0">  
+                            <pre class="m-0">
+<code>
+
+    // index.js
+    // ---------------------------------------------
+    /* Create API Express Module   (DB SQL Server)
+    //----------------------------------------------
+
+
+
+    // Create HTTP Express Server Connection :
+    //------------------------------------------
+
+    // instal XAMPP From <a target="_blank" href="https://www.apachefriends.org/download.html">Here</a>
+    // Create Your Table Included ( name / Password / age )
+    // Link Table With Code By This Connection
+
+    const mysql2 = require('mysql2');
+
+    const query = mysql2.createConnection({
+
+      host: 'localhost',
+      user: 'root',
+      password:"",
+      database: 'Name Of SQL DB'
+
+    });
+
+
+
+    // Create (Add New User)
+    //-----------------------
+    // Command : INSERT INTO users (name,email,age) VALUES ("sara","Sara@yahoo.com",22)
+
+    //------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------------
+
+    // Retrieve (Get All Users)
+    //---------------------------
+    // Command : SELECT * FROM `users` WHERE id = 2;               | For Get User Start By ID 2
+    // Command : SELECT name FROM `users`;                         | For Get All Name Only
+    // Command : SELECT name as userName FROM `users`;             | For Get All Name Under New Key (userName)
+    // Command : SELECT * From `users` WHERE name LIKE "Omr";      | For Get All Users The Names is Omr 
+    // Command : SELECT * From `users` WHERE name LIKE "A%";       | For Get All Users The Names is Start By A 
+    // Command : SELECT * From `users` WHERE name LIKE "%A";       | For Get All Users The Names is End By A 
+    // Command : SELECT * From `users` WHERE name LIKE "%A%";      | For Get All Users The Names is contains A 
+    // Command : SELECT * FROM `users`;                            | For Get All Users
+
+    //------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------------
+
+    // Delete (Delete User From Table)
+    //----------------------------------
+    // Command : DELETE FROM `users` WHERE id = 2;                 | For Delete User Start By ID 2
+    // Command : DELETE FROM `users`                               | For Delete All Users
+    // Command : TRUNCATE users                                    | For Delete All User and Reset Table 
+
+    //------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------------
+
+    // Update (Update User Info)
+    //----------------------------
+    // command : UPDATE `users` SET `name`='Bl7',`email`='Bl7@gmail.com',`age`= 35 WHERE id=1;  | For Update User Info
+    // command : UPDATE `users` SET `name`='Bl7';                                               | For Update All Users Name By Bl7
+
+    //------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------------
+
+    // In Case i Have Two Table
+
+    // Table1 --> id / name / email / password
+
+    // Table2 --> id / title / description / user_id
+
+    // in case i need to select name from table1 and title,description from table2 | if table1.id = table2.user_id
+    // use this command -->> 
+    // select users.name,notes.title,notes.description from users JOIN notes ON users.id = notes.user_id
+
+    // in case i need to select name from table1 and title,description from table2 | if table1.id = table2.user_id && table1.id = 3
+    // use this command -->> 
+    // select users.name,notes.title,notes.description from users JOIN notes ON users.id = notes.user_id WHERE users.id = 3
+
+
+
+    // Create Server :
+    //------------------
+
+    const express = require("express");
+
+    const app = express()
+
+    app.listen(3000,()=>{
+
+      console.log("The Server Is Running on Port 3000")
+
+    })
+
+    app.use(express.json())
+
+
+
+    // Create Routes and Logic :
+    //---------------------------
+
+
+    // Get All User
+    //----------------
+
+    app.get("/allUsers",(req,res)=>{
+
+        query.execute('Select * from users',(err,data)=>{
+
+            return res.json({message:"Get All Users Page",data})
+        })
+
+    })
+
+    //-----------------------------------------------------------------------------------------------------------------------
+    // Get User By Name 
+    //-------------------
+
+    app.get("/findByName/:nameOfUser",(req,res)=>{
+
+      let {nameOfUser} = req.params
+    
+      query.execute(`SELECT * FROM users WHERE name IN ('${nameOfUser}');`,(err,data)=>{
+
+          return res.json({message:`Get All User The Name is (${nameOfUser})`,data})
+
+      })
+
+    })
+
+    //-----------------------------------------------------------------------------------------------------------------------
+    // Get User Name Start By Letter and age less than Number
+    //---------------------------------------------------------
+
+    app.get("/find/:letter/:lessNumber",(req,res)=>{
+
+      let {letter,lessNumber} = req.params
+    
+      query.execute(`SELECT * From users WHERE name LIKE "${letter}%" AND age <${lessNumber}`,(err,data)=>{
+
+          return res.json({message:"Get User Name Start By Letter and age less than Number",data})
+      })
+
+    })
+
+    //-----------------------------------------------------------------------------------------------------------------------
+    // Add User
+    //------------
+
+    app.post("/addUser/",(req,res)=>{
+
+      let {name,email,password,age} = req.body
+
+      query.execute(`SELECT * FROM users WHERE email = '${email}'`,(err,data)=>{
+
+        if (data.length == 0) {
+
+          query.execute(`insert into users (name,email,password,age) values ("${name}","${email}","${password}",${age})`,(err,data)=>{
+
+          return res.json({message:`Add User ${name} Succuss`})
+        
+          })
+
+        }else{
+
+          return res.json({Message:`E-Mail (${email}) Already Exist`})
+
+        }
+    
+      })
+
+
+    });
+
+    //-----------------------------------------------------------------------------------------------------------------------
+    // Update User
+    //--------------
+
+    app.put("/updateUser",(req,res)=>{
+
+        let {oldMail,name,email,password,age} = req.body
+
+        query.execute(`SELECT * FROM users WHERE email = "${email}"`,(err,data)=>{
+
+          if (data.length == 0) {
+
+            query.execute(`update users set name="${name}",email="${email}",password="${password}",age= ${age} WHERE email="${oldMail}"`,(err,data)=>{
+            
+            return res.json({message:`User Info And Mail Updated`})
+            
+            })
+
+          }else{
+        
+            query.execute(`update users set name="${name}",email="${oldMail}",password="${password}",age= ${age} WHERE email="${oldMail}"`,(err,data)=>{
+            
+            return res.json({message:`User Info Updated Without Mail, The New Mail Used From Other User`})
+            
+            })
+          }
+
+        });
+
+    });
+
+    //-----------------------------------------------------------------------------------------------------------------------
+    // Delete User
+    //--------------
+
+    app.delete("/deleteUser/",(req,res)=>{
+
+        let {email} = req.body
+
+        query.execute(`delete from users where email="${email}"`,(err,data)=>{
+
+            if (data.affectedRows == 0) {
+
+                res.json({message:`User E-Mail ${email} Not Found`})
+
+            }else{
+
+                res.json({message:`User E-Mail ${email} Delete Succuss`})
+            }
+        })
+    });
+
+
+
+    //-----------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------
+
+    // Get All product
+    //------------------
+
+    app.get("/allProducts",(req,res)=>{
+
+      query.execute('Select * from products',(err,data)=>{
+
+          return res.json({message:"Get All Products Page",data})
+      })
+
+    })
+
+    //-----------------------------------------------------------------------------------------------------------------------
+    // Get product greater than 3000
+    //----------------------------------
+
+    app.get("/findGreaterThan/:Number",(req,res)=>{
+
+      let {Number} = req.params
+    
+      query.execute(`SELECT * From products WHERE price >${Number}`,(err,data)=>{
+
+          return res.json({message:`Get product greater Than ${Number}`,data})
+      })
+
+    })
+
+    //-----------------------------------------------------------------------------------------------------------------------
+    // Add product
+    //----------------
+
+    app.post("/addProduct/",(req,res)=>{
+
+      let {pName,pDescription,price,createdBy} = req.body
+
+      query.execute(`Select * from products where pName="${pName}"`,(err,data)=>{
+
+        if (data.length == 0) {
+
+          query.execute(`insert into products (pName,pDescription,price,createdBy) values ("${pName}","${pDescription}",${price},"${createdby}")`,(err,data)=>{
+
+            return res.json({message:`Add Product ${pName} Succuss`})
+        
+          })
+
+        }else{
+
+          return res.json({Message:`Product (${pName}) Already Exist`,data})
+
+        }
+
+      })
+
+
+    });
+    //-----------------------------------------------------------------------------------------------------------------------
+    // Delete product
+    //----------------------------------------------
+
+    app.delete("/deleteProduct/",(req,res)=>{
+
+      let {pName,createdBy} = req.body
+
+      query.execute(`delete from products where pName="${pName}" AND createdBy="${createdBy}"`,(err,data)=>{
+
+
+        if (data.affectedRows == 0) {
+
+            res.json({message:`Product ${pName} Not Found Or You Are Not Authorized`})
+
+        }else{
+
+          res.json({message:`Product ${pName} Delete Susses`})
+
+        }
+
+      })
+
+    });
+
+    //-----------------------------------------------------------------------------------------------------------------------
+    // Update product
+    //------------------
+
+    app.put("/updateProduct",(req,res)=>{
+
+      let {pName,pDescription,price,createdBy} = req.body
+
+      query.execute(`UPDATE products SET pName="${pName}",pDescription="${pDescription}",price= ${price} WHERE createdby="${createdby}";`,(err,data)=>{
+
+        if (data.affectedRows == 0) {
+
+          res.json({message:`Product ${pName} Not Found Or You Are Not Authorized`})
+
+        }else{
+
+          res.json({message:`Product Update Susses`})
+
+        }
+
+      });
+
+    });
+
+    //-----------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------
+
+    // Get All Users And Products
+    //-----------------------------
+
+    app.get("/allUsersAndProducts",(req,res)=>{
+
+      let allData;
+
+      query.execute('Select * FROM users',(err,userData)=>{
+
+        query.execute('Select * FROM products',(err,productsData)=>{
+
+          return res.json({message:"Get All Users And Products",userData,productsData})
+
+        })
+
+      })
+
+    })
+
+</code>
+                            </pre>
+                        </h5>
+                    </div>
+
+                </section>
+
+                <!------------------------------------------------------------------------------------->
+
+            </div>
+
+        </div>
+    </div>
+
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+
+            </div>
+
+        </main>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Footer -->
+        <!------------>
+
+        <footer id="contact" class="py-5 bg-black text-white">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+
+                        <h4 class="mb-4 pb-4 border-bottom">Author :</h4>
+
+                        <h1>M O H A M E D</h1>
+                        
+                        <h1>M A G D Y</h1>
+    
+                    </div>
+    
+                    <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+    
+                        <h4 class="mb-4 pb-4 border-bottom">Contact :</h4>
+
+                        <h6><a href="mailto:Eng.M.Ezzeldeen@gmail.com" class="a_None text-white">Email: Eng.M.Ezzeldeen@gmail.com</a></h6>  
+
+                        <button class="bg-transparent text-white border-0 p-0" onclick="openLink('wa.me/+201285880488')"><h6 class="mb-0">Phone : +20 12 858 80 4 88</h6></button>    
+                        
+                        <div class="d-flex justify-content-start my-3">
+        
+                            <button onclick="openLink('github.com/Eng-M-Ma9dy')" class="SM-BTN-icon GitHub    me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-github"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.linkedin.com/in/eng-m-ma9dy/')" class="SM-BTN-icon LinkedIn  mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </button>
+        
+                            <button onclick="openLink('www.facebook.com/eng.m.ma9dy/')" class="SM-BTN-icon Facebook  mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.instagram.com/eng.m.ma9dy/')" class="SM-BTN-icon Instagram ms-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-instagram"></i>
+                            </button>
+                
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+    
+                        <h4 class="mb-4 pb-4 border-bottom">My Pages :</h4>
+
+                        <h6><a href="mailto:Info.Unit.Alex@gmail.com" class="a_None text-white">Info.Unit.Alex@gmail.com</a></h6>  
+
+                        <button class="bg-transparent text-white border-0 p-0" onclick="openLink('wa.me/+201140155633')"><h6 class="mb-0">Phone : +20 11 40 155 6 33</h6></button>    
+                        
+                        <div class="text-light d-flex justify-content-start my-3">
+        
+                            <button onclick="openLink('www.facebook.com/info.unit.iu/')" class="SM-BTN-icon Facebook  me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                                            
+                            <button onclick="openLink('www.tiktok.com/@info.unit.iu')" class="SM-BTN-icon TikTok    mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.instagram.com/info.unit.iu')" class="SM-BTN-icon Instagram mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-instagram"></i>
+                            </button>
+
+                            <button onclick="openLink('youtube.com/@Info.Unit-IU')" class="SM-BTN-icon Youtube   ms-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-youtube"></i>
+                            </button>
+                
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 mt-3 mt-lg-0 d-none d-md-flex justify-content-start justify-content-xl-center">
+
+                        <button class="bg-transparent text-white border-0 p-0" onclick="openLink('eng-m-ma9dy.github.io/Portfolio/')"><img src="../src/Images/Logo-MM.jpg" class="footer_logo rounded-circle" alt=""></button>
+            
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- JS Links -->
+        <!-------------->
+        
+        <!-- Offline Bootstrap js : -->
+        <script src="../JS/bootstrap.bundle.min.js"></script>
+
+        <!-- jQuery js : -->
+        <script src="../JS/jquery-3.6.3.min.js"></script>
+
+        <!-- My Shared js : -->
+        <script src="../JS/shared.js"></script>
+    
+    </body>
+</html>

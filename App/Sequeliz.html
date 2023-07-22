@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Eng: Mohamed Magdy Mettwally">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The Reference For Back-End Developers, It's Contain All Code The Developers use in coding, Node.js, SQL DB (Sequelize), MongoDB (Mongoose), APIs,GraphQL, Socket.io, Ajax">
+        <meta name="keywords" content="Node.js Database SQL Sequelize MongoDB Mongoose APIs GraphQL Socket.io Ajax Coding Developers Back-End">
+    
+        <title>Sequeliz</title>
+        <meta property="og:image" content="./../src/Images/Logo-MM-Cover.jpg">
+        <link rel="website icon" type="PNG" href="./../src/Images/Logo-MM-Title.png">
+
+        <!-- Offline Bootstrap CSS : -->
+        <link href="../CSS/bootstrap.min.css" rel="stylesheet"/>
+
+        <!-- FontAwesome CSS : -->
+        <link href="../CSS/all.min.css" rel="stylesheet"/>
+                
+        <!-- My Shared CSS : -->
+        <link href="../CSS/shared.css" rel="stylesheet"/>
+
+    </head>
+
+    <body>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Loader -->
+        <!------------>
+
+        <div id="myLoading">
+
+            <!---------------------------------------------------------------->
+    
+            <div id="loadingDiv" class="d-flex justify-content-center align-items-center">
+                <div id="loaderDiv" class="loader--style6" title="5">
+                    <svg id="loaderSize" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px"
+                        viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                        <rect x="0" y="13" width="4" height="5" fill="blue">
+                            <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0s" dur="0.6s"
+                                repeatCount="indefinite" />
+                            <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0s" dur="0.6s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <rect x="10" y="13" width="4" height="5" fill="white">
+                            <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.15s" dur="0.6s"
+                                repeatCount="indefinite" />
+                            <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.15s" dur="0.6s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <rect x="20" y="13" width="4" height="5" fill="blue">
+                            <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.3s" dur="0.6s"
+                                repeatCount="indefinite" />
+                            <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.3s" dur="0.6s"
+                                repeatCount="indefinite" />
+                        </rect>
+                    </svg>
+                </div>
+            </div>
+    
+            <!---------------------------------------------------------------->
+    
+        </div>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Header -->
+        <!------------>
+
+        <header id="headerSection" class="w-100 vh-100 mb-1">
+
+            <div id="headerDiv" class="overflow-hidden position-relative">
+
+                <svg id="svg_white" viewBox="0 0 1440 320">
+                    <path fill="white" fill-opacity="1" d="M0,0L24,16C48,32,96,64,144,80C192,96,240,96,288,80C336,64,384,32,432,48C480,64,528,128,576,144C624,160,672,128,720,133.3C768,139,816,181,864,197.3C912,213,960,203,1008,208C1056,213,1104,235,1152,245.3C1200,256,1248,256,1296,250.7C1344,245,1392,235,1416,229.3L1440,224L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path>
+                </svg>
+
+                <svg id="svg_blueviolet" viewBox="0 0 1440 320">
+                    <path fill="blueviolet" fill-opacity="1" d="M0,0L24,16C48,32,96,64,144,80C192,96,240,96,288,80C336,64,384,32,432,48C480,64,528,128,576,144C624,160,672,128,720,133.3C768,139,816,181,864,197.3C912,213,960,203,1008,208C1056,213,1104,235,1152,245.3C1200,256,1248,256,1296,250.7C1344,245,1392,235,1416,229.3L1440,224L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path>
+                </svg>
+
+                <div id="headerDiv_Content" class="d-flex flex-column justify-content-center align-items-start">
+
+    
+                    <div class="ms-3 text-white">
+
+                        <h4>Back End..</h4>
+                        <h1 id="theMainTitle" class="fw-bold">ORM Sequeliz</h1>
+                        <h5 class="text-end">SQL Database</h5>
+
+                    </div>
+                                
+                    <div>
+                        <div class="d-flex justify-content-start ms-3 mb-3">
+        
+                            <div class="rotating-text">
+                    
+                                <p class="kf text-light">I'm a </p>
+                    
+                                <p>
+                                    <span class="word w-1">     M.Magdy    </span>
+                                    <span class="word w-2">     Full-Stack </span>
+                                    <span class="word w-3">     Developer  </span>
+                                </p>
+                            
+                            </div>
+        
+                        </div>
+        
+                        <div class="text-light ms-3 d-flex justify-content-start">
+                
+                            <button onclick="openLink('www.linkedin.com/in/eng-m-ma9dy/')" class="SM-BTN-icon LinkedIn rounded-circle me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </button>
+        
+                            <button onclick="openLink('github.com/Eng-M-Ma9dy')" class="SM-BTN-icon GitHub rounded-circle mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-github"></i>
+                            </button>
+        
+                            <button onclick="openLink('www.facebook.com/eng.m.ma9dy/')" class="SM-BTN-icon Facebook rounded-circle mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.instagram.com/eng.m.ma9dy/')" class="SM-BTN-icon Instagram rounded-circle mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-instagram"></i>
+                            </button>
+                
+                        </div>
+                        
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </header>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Main -->
+        <!---------->
+
+        <main id="mainSection" class="text-white mb-1">
+        
+            <div id="mainDiv" class="py-5">
+
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+    
+    <div class="mt-5">
+        <button id="homeBTN" onclick="openLink('eng-m-ma9dy.github.io/BackEnd/')" class="border-0 mx-auto text-white bg-primary fs-1 d-flex justify-content-center align-items-center">
+            <i class="px-2 border-0 fa-solid fa-house-chimney"></i> <span id="homeText" class="d-none">Home</span>
+        </button>
+    </div>
+
+
+
+
+    <div class="container mb-5">
+        <div class="row">
+
+            <h2 class="my-5 py-5 text-center">( <span class="text-primary">ORM <span class="text-white">-</span> Sequeliz</span> ) </h2>
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-12">
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre class="m-0 p-3 p-md-5">
+<code>
+
+    - ORM --- Object Relation Mapping
+
+    - The commands used to delete and add an element in the table differ from programming language to another, so we use ORM
+
+    - DB1         DB2      VS     ORM 
+    -----------------------------------------  
+    - insert      add             Create
+
+    - For apply ORM With SQL, i will use Sequeliz
+
+    - For install Sequeliz >> npm i sequelize
+
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-12">
+
+
+                <h3 class="my-5  text-center">( <span class="text-primary">Start New Project</span> ) </h3>
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <div class="p-3 p-md-5">
+                            <h3 class="my-5">* I Will Divide Folders To :</h3>
+                            <div class="bg-dark py-5">
+                                <img src="../src/Images/SubFelders1.jpg" class="mx-1" alt="">
+                                <img src="../src/Images/SubFelders2.jpg" class="mx-1" alt="">
+                                <img src="../src/Images/SubFelders3.jpg" class="mx-1" alt="">
+                            </div>
+                        </div>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-12">
+
+
+                <h2 class="my-5  text-center">( index.js ) </h2>
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre class="m-0 p-3 p-md-5">
+<code>
+
+    //-------------------------------------------------------------------------------
+    // Create Express Server :
+    //-----------------------------
+
+    import express from "express";
+    const app = express();
+
+    app.use(express.json())
+
+    app.listen(3000,()=>{
+    
+        console.log(`Server Is Running Port: 3000`);
+    
+    })
+
+    //-------------------------------------------------------------------------------
+    // Create API :
+    //------------------------------
+
+    app.get('/', (req, res) => {
+    
+        res.send('For Use API Url: http://localhost:3000/api/v1/table1/')
+    })
+
+    //---------------------------------------------------------------------------------
+
+    import table1Routers from './src/modules/table1/table1.routes.js'
+
+    app.use('/api/v1/table1',table1Routers)
+
+    //---------------------------------------------------------------------------------
+
+    import table2Routers from './src/modules/table2/table2.routes.js'
+
+    app.use('/api/v1/table1',table2Routers)
+
+    //---------------------------------------------------------------------------------
+
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-12 mt-5">
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre class="m-0 p-3 p-md-5">
+<code>
+
+    // Project > Database > Connection.js
+    //----------------------------------------------------------------
+
+    import {Sequelize } from "sequelize";
+
+    export const connection = new Sequelize ("Name-Of-DB","root","Password",{
+
+        host:'localhost',
+
+        dialect: 'mysql'
+
+    })
+
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-md-6 mt-5">
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre style="height: 600px;" class="m-0 ">
+<code>
+
+    // Project > Database > Models > table1.model.js
+    //----------------------------------------------------------------
+
+    import { connection } from "../Connection.js";
+    import { DataTypes } from "sequelize";
+
+    export const table1Schema = connection.define("table1",{
+
+        id:{
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+
+        name:{
+            type: DataTypes.STRING(50),
+        },
+
+        email:{
+            type: DataTypes.STRING(50),
+        },
+
+        password:{
+            type: DataTypes.STRING(50),
+        }
+
+    })
+
+    connection.sync()
+
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <div class="col-md-6 mt-5">
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre style="height: 600px;" class="m-0 ">
+<code>
+
+    // Project > Database > Models > table2.model.js
+    // ----------------------------------------------------------------
+
+    import { connection } from "../Connection.js";
+    import { DataTypes } from "sequelize";
+
+    export const table2Schema = connection.define("table2",{
+
+        id:{
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+
+        title:{
+            type: DataTypes.STRING(50),
+        },
+
+        type:{
+            type: DataTypes.STRING(50),
+        },
+
+        price:{
+            type: DataTypes.INTEGER,
+        }
+
+    })
+
+    connection.sync()
+
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-md-6 mt-5">
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre style="height: 600px;" class="m-0 ">
+<code>
+
+    // Project > src > Api > table1 > Controllers > table1.controllers.js
+    //----------------------------------------------------------------------
+    
+    import { table1Schema } from "../../../../DB/models/table1.model.js";
+
+    export const allTable1 = async(req,res)=>{
+
+        let table1 = await table1Schema.findAll();
+
+        res.json({message:"done",table1})
+
+    }
+
+    export const deleteTable1 = async(req,res)=>{
+
+        let {id} = req.body;
+
+        let table1 = await table1Schema.destroy({
+            where : {id} // if key == value (name of var) replace {id:id} by {id}
+        });
+    
+        res.json({message:"done",table1})
+    
+    }
+
+    export const addTable1 = async(req,res)=>{
+
+        let {name,email,password} = req.body;
+
+        let table1 = await table1Schema.create({name,email,password});
+
+        res.json({message:"done",table1})
+
+    }
+
+    export const updateTable1 = async(req,res)=>{
+
+        let {id,name,email,password} = req.body;
+
+        let table1 = await table1Schema.update({name,email,password},{
+            where : {id}
+        });
+    
+        table1[0] ? res.json({message:"done",table1}) : res.json({message:"Not Found",table1})
+        // table1[0] == false / table1[1] == true
+    }
+
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <div class="col-md-6 mt-5">
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre style="height: 600px;" class="m-0 ">
+<code>
+
+    // Project > src > Api > table1 > table1.routes.js
+    // ----------------------------------------------------------------
+    
+    import express from "express";
+
+    const router = express.Router();
+
+    export default router;
+
+    import { allTable1 , deleteTable1 , addTable1 , updateTable1 } from './Controllers/table1.controllers.js'
+
+    router.get("/allTable1",allTable1)
+
+    router.post("/addTable1",addTable1)
+
+    router.delete("/deleteTable1",deleteTable1)
+
+    router.put("/updateTable1",updateTable1)
+
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-md-6 mt-5">
+                        
+                <div class="border">
+                    <h5 class="m-0">
+                        <pre style="height: 600px;" class="m-0 ">
+<code>
+
+    // Project > src > Api > table2 > Controllers > table2.controllers.js
+    // ----------------------------------------------------------------------
+
+    import { table2Schema } from "../../../../DB/models/table2.model.js";
+
+    export const allTable2 = async(req,res)=>{
+
+    let table2 = await table2Schema.findAll();
+
+    res.json({message:"done",table2})
+
+    }
+
+    export const deleteTable2 = async(req,res)=>{
+
+    let {id} = req.body;
+
+    let table2 = await table2Schema.destroy({
+    where : {id} // if key == value (name of var) replace {id:id} by {id}
+    });
+
+    res.json({message:"done",table2})
+
+    }
+
+    export const addTable2 = async(req,res)=>{
+
+    let {title,type,price} = req.body;
+
+    let table2 = await table2Schema.create({title,type,price});
+
+    res.json({message:"done",table2})
+
+    }
+
+    export const updateTable2 = async(req,res)=>{
+
+    let {id,title,type,price} = req.body;
+
+    let table2 = await table2Schema.update({title,type,price},{
+    where : {id}
+    });
+
+    table2[0] ? res.json({message:"done",table2}) : res.json({message:"Not Found",table2})
+    // table2[0] == false / table2[1] == true
+    }
+
+</code>
+                    </pre>
+                    </h5>
+                </div>
+            
+            </div>
+
+            <div class="col-md-6 mt-5">
+                        
+                <div class="border">
+                    <h5 class="m-0">
+                        <pre style="height: 600px;" class="m-0 ">
+<code>
+
+    // Project > src > Api > table2 > table2.routes.js
+    // ----------------------------------------------------------------
+
+    import express from "express";
+
+    const router = express.Router();
+
+    export default router;
+
+    import { allTable2 , deleteTable2 , addTable2 , updateTable2 } from './Controllers/table2.controllers.js'
+
+    router.get("/allTable2",allTable2)
+
+    router.post("/addTable2",addTable2)
+
+    router.delete("/deleteTable2",deleteTable2)
+
+    router.put("/updateTable2",updateTable2)
+    
+</code>
+                        </pre>
+                    </h5>
+                </div>
+            
+            </div>
+
+<!------------------------------------------------------------------------------------->
+
+        </div>
+    </div>
+
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+
+            </div>
+
+        </main>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Footer -->
+        <!------------>
+
+        <footer id="contact" class="py-5 bg-black text-white">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+
+                        <h4 class="mb-4 pb-4 border-bottom">Author :</h4>
+
+                        <h1>M O H A M E D</h1>
+                        
+                        <h1>M A G D Y</h1>
+    
+                    </div>
+    
+                    <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+    
+                        <h4 class="mb-4 pb-4 border-bottom">Contact :</h4>
+
+                        <h6><a href="mailto:Eng.M.Ezzeldeen@gmail.com" class="a_None text-white">Email: Eng.M.Ezzeldeen@gmail.com</a></h6>  
+
+                        <button class="bg-transparent text-white border-0 p-0" onclick="openLink('wa.me/+201285880488')"><h6 class="mb-0">Phone : +20 12 858 80 4 88</h6></button>    
+                        
+                        <div class="d-flex justify-content-start my-3">
+        
+                            <button onclick="openLink('github.com/Eng-M-Ma9dy')" class="SM-BTN-icon GitHub    me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-github"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.linkedin.com/in/eng-m-ma9dy/')" class="SM-BTN-icon LinkedIn  mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </button>
+        
+                            <button onclick="openLink('www.facebook.com/eng.m.ma9dy/')" class="SM-BTN-icon Facebook  mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.instagram.com/eng.m.ma9dy/')" class="SM-BTN-icon Instagram ms-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-instagram"></i>
+                            </button>
+                
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+    
+                        <h4 class="mb-4 pb-4 border-bottom">My Pages :</h4>
+
+                        <h6><a href="mailto:Info.Unit.Alex@gmail.com" class="a_None text-white">Info.Unit.Alex@gmail.com</a></h6>  
+
+                        <button class="bg-transparent text-white border-0 p-0" onclick="openLink('wa.me/+201140155633')"><h6 class="mb-0">Phone : +20 11 40 155 6 33</h6></button>    
+                        
+                        <div class="text-light d-flex justify-content-start my-3">
+        
+                            <button onclick="openLink('www.facebook.com/info.unit.iu/')" class="SM-BTN-icon Facebook  me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                                            
+                            <button onclick="openLink('www.tiktok.com/@info.unit.iu')" class="SM-BTN-icon TikTok    mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.instagram.com/info.unit.iu')" class="SM-BTN-icon Instagram mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-instagram"></i>
+                            </button>
+
+                            <button onclick="openLink('youtube.com/@Info.Unit-IU')" class="SM-BTN-icon Youtube   ms-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-youtube"></i>
+                            </button>
+                
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 mt-3 mt-lg-0 d-none d-md-flex justify-content-start justify-content-xl-center">
+
+                        <button class="bg-transparent text-white border-0 p-0" onclick="openLink('eng-m-ma9dy.github.io/Portfolio/')"><img src="../src/Images/Logo-MM.jpg" class="footer_logo rounded-circle" alt=""></button>
+            
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- JS Links -->
+        <!-------------->
+        
+        <!-- Offline Bootstrap js : -->
+        <script src="../JS/bootstrap.bundle.min.js"></script>
+
+        <!-- jQuery js : -->
+        <script src="../JS/jquery-3.6.3.min.js"></script>
+
+        <!-- My Shared js : -->
+        <script src="../JS/shared.js"></script>
+    
+    </body>
+</html>
