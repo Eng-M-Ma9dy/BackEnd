@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Eng: Mohamed Magdy Mettwally">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The Reference For Back-End Developers, It's Contain All Code The Developers use in coding, Node.js, SQL DB (Sequelize), MongoDB (Mongoose), APIs,GraphQL, Socket.io, Ajax">
+        <meta name="keywords" content="Node.js Database SQL Sequelize MongoDB Mongoose APIs GraphQL Socket.io Ajax Coding Developers Back-End">
+    
+        <title>EJS</title>
+        <meta property="og:image" content="./../src/Images/Logo-MM-Cover.jpg">
+        <link rel="website icon" type="PNG" href="./../src/Images/Logo-MM-Title.png">
+
+        <!-- Offline Bootstrap CSS : -->
+        <link href="../CSS/bootstrap.min.css" rel="stylesheet"/>
+
+        <!-- FontAwesome CSS : -->
+        <link href="../CSS/all.min.css" rel="stylesheet"/>
+                
+        <!-- My Shared CSS : -->
+        <link href="../CSS/shared.css" rel="stylesheet"/>
+
+    </head>
+
+    <body>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Loader -->
+        <!------------>
+
+        <div id="myLoading">
+
+            <!---------------------------------------------------------------->
+    
+            <div id="loadingDiv" class="d-flex justify-content-center align-items-center">
+                <div id="loaderDiv" class="loader--style6" title="5">
+                    <svg id="loaderSize" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px"
+                        viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                        <rect x="0" y="13" width="4" height="5" fill="blue">
+                            <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0s" dur="0.6s"
+                                repeatCount="indefinite" />
+                            <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0s" dur="0.6s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <rect x="10" y="13" width="4" height="5" fill="white">
+                            <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.15s" dur="0.6s"
+                                repeatCount="indefinite" />
+                            <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.15s" dur="0.6s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <rect x="20" y="13" width="4" height="5" fill="blue">
+                            <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.3s" dur="0.6s"
+                                repeatCount="indefinite" />
+                            <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.3s" dur="0.6s"
+                                repeatCount="indefinite" />
+                        </rect>
+                    </svg>
+                </div>
+            </div>
+    
+            <!---------------------------------------------------------------->
+    
+        </div>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Header -->
+        <!------------>
+
+        <header id="headerSection" class="w-100 vh-100 mb-1">
+
+            <div id="headerDiv" class="overflow-hidden position-relative">
+
+                <svg id="svg_white" viewBox="0 0 1440 320">
+                    <path fill="white" fill-opacity="1" d="M0,0L24,16C48,32,96,64,144,80C192,96,240,96,288,80C336,64,384,32,432,48C480,64,528,128,576,144C624,160,672,128,720,133.3C768,139,816,181,864,197.3C912,213,960,203,1008,208C1056,213,1104,235,1152,245.3C1200,256,1248,256,1296,250.7C1344,245,1392,235,1416,229.3L1440,224L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path>
+                </svg>
+
+                <svg id="svg_blueviolet" viewBox="0 0 1440 320">
+                    <path fill="blueviolet" fill-opacity="1" d="M0,0L24,16C48,32,96,64,144,80C192,96,240,96,288,80C336,64,384,32,432,48C480,64,528,128,576,144C624,160,672,128,720,133.3C768,139,816,181,864,197.3C912,213,960,203,1008,208C1056,213,1104,235,1152,245.3C1200,256,1248,256,1296,250.7C1344,245,1392,235,1416,229.3L1440,224L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path>
+                </svg>
+
+                <div id="headerDiv_Content" class="d-flex flex-column justify-content-center align-items-start">
+
+    
+                    <div class="ms-3 text-white">
+
+                        <h4>Back End..</h4>
+                        <h1 id="theMainTitle" class="fw-bold">Embedded JS</h1>
+                        <h5 class="text-end">SSR</h5>
+
+                    </div>
+                                
+                    <div>
+                        <div class="d-flex justify-content-start ms-3 mb-3">
+        
+                            <div class="rotating-text">
+                    
+                                <p class="kf text-light">I'm a </p>
+                    
+                                <p>
+                                    <span class="word w-1">     M.Magdy    </span>
+                                    <span class="word w-2">     Full-Stack </span>
+                                    <span class="word w-3">     Developer  </span>
+                                </p>
+                            
+                            </div>
+        
+                        </div>
+        
+                        <div class="text-light ms-3 d-flex justify-content-start">
+                
+                            <button onclick="openLink('www.linkedin.com/in/eng-m-ma9dy/')" class="SM-BTN-icon LinkedIn rounded-circle me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </button>
+        
+                            <button onclick="openLink('github.com/Eng-M-Ma9dy')" class="SM-BTN-icon GitHub rounded-circle mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-github"></i>
+                            </button>
+        
+                            <button onclick="openLink('www.facebook.com/eng.m.ma9dy/')" class="SM-BTN-icon Facebook rounded-circle mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.instagram.com/eng.m.ma9dy/')" class="SM-BTN-icon Instagram rounded-circle mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-instagram"></i>
+                            </button>
+                
+                        </div>
+                        
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </header>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Main -->
+        <!---------->
+
+        <main id="mainSection" class="text-white mb-1">
+        
+            <div id="mainDiv" class="py-5">
+
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+    
+    <div class="mt-5">
+        <button id="homeBTN" onclick="openLink('eng-m-ma9dy.github.io/BackEnd/')" class="border-0 mx-auto text-white bg-primary fs-1 d-flex justify-content-center align-items-center">
+            <i class="px-2 border-0 fa-solid fa-house-chimney"></i> <span id="homeText" class="d-none">Home</span>
+        </button>
+    </div>
+
+
+
+
+    <div class="container mb-5">
+        <div class="row">
+
+
+
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-12">
+
+
+                <h2 class="my-5  text-center">( <span class="text-primary">Start Project</span> ) </h2>
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <div class="p-3 p-md-5">
+                            <h3 class="my-5">* I Will Divide Folders To :</h3>
+                            <div class="bg-dark py-5">
+                                <img src="../src/Images/ejsFelders1.jpg" class="mx-1" alt="">
+                                <img src="../src/Images/ejsFelders2.jpg" class="mx-1" alt="">
+                            </div>
+                        </div>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-12">
+
+                <h2 class="my-5 text-center">( <span class="text-primary">EJS <span class="text-white">-</span> Start</span> ) </h2>
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre class="m-0 p-3 p-md-5">
+<code>
+
+    - ejs | Write js Code in html
+    
+    - ejs | For Use ejs
+
+        * project > npm i ejs
+
+        * create folder project > views and set index.html in views
+        
+        * and go to index.js and change line
+
+          From | res.sendFile(path.join(path.resolve() , "index.html"))
+
+          To   | res.render("index.ejs")
+        
+        * Rename index.html in views folder to index.ejs
+        
+        * install VS-Code Extension (EJS language support)
+
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-12">
+
+
+                <h2 class="my-5  text-center">( index.js ) </h2>
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre style="height: 600px;" class="m-0 p-3 p-md-5">
+<code>
+
+    /*
+    ----------------------------------------------------------------------------------------------
+    Form App :
+    -----------
+    In This Project I Will Create HTML Contain Form For Take Info From User and Save My Database
+    ----------------------------------------------------------------------------------------------
+    */
+
+    import { connection } from "./Database/connection.js";
+    connection()
+
+    import userModel from "./Database/models/user.model.js";
+
+    import path from 'path' // Built In Module
+
+    //------------------------------------------------------------------------------
+
+    import express from 'express'
+    const app = express()
+    const port = 3000
+
+    app.use(express.urlencoded({extended:true}))
+
+    app.use(express.json())
+
+    app.use(express.static("Static"))
+
+    app.listen(port, () => console.log(`>>> MEGA | Form-App | Listening on Port ${port}!`))
+
+    //------------------------------------------------------------------------------
+
+    app.get('/', async (req, res) => {
+
+        //----------
+
+        let allUsers = await userModel.find({})
+
+        let myName = "Mohamed Magdy"
+
+        let displayData = true
+
+        //----------
+
+        // In Normal Case I Use
+        // res.send("Hello World") /* Or */ res.json({message:"Add New User Done"})
+
+        // In This Case I Will Replay By HTML File
+        // res.sendFile("index.html")
+        // File Not Work (error)
+
+        // In This Case I Need To Set Full Path Of File
+        // res.sendFile("C:/Users/EngME/Desktop/index.html")
+
+        // But I Can't Use This Way On The Server
+        // I Will Make import Built In Module Path | import path from 'path'
+        // and i Will use path.resolve() For Start Path of File From Project Folder
+        // res.sendFile(path.resolve() + "/index.html")
+        // and i Can use path.join() For Concat local file path in Project Folder
+        // res.sendFile(path.join(path.resolve() , "index.html"))
+
+        // Follow project > views > index.ejs
+
+        res.render("index.ejs",{myName , displayData , allUsers})
+
+    })
+
+
+
+
+    app.post('/addUser', async (req, res) => {
+
+        // res.json({message:"Add New User Done"})
+
+        // After Add New User I Need To Redirection User To The Home Page
+        res.redirect("/")
+
+        // The Type Of Data Not json file
+        // For Show Data set app.use(express.urlencoded({extended:true}))
+        console.log(req.body);
+
+
+        //----------
+
+        let addUser = await userModel.insertMany({...req.body})
+
+        //----------
+
+    })
+
+
+
+
+
+
+    app.post('/deleteUser/:id', async (req, res) => {
+
+        res.redirect("/")
+
+        //----------
+
+        let {id} = req.params;
+
+        let deleteUser = await userModel.findByIdAndDelete(id)
+
+        //----------
+
+    })
+
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-md-6 mt-5">
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre style="height: 600px;" class="m-0 ">
+<code>
+
+    // Project > Database > Connection.js
+    // ----------------------------------------------------------------
+
+    import mongoose from 'mongoose';
+
+    export const connection = ()=>{
+    
+        mongoose.connect('mongodb://127.0.0.1:27017/Mega-Form')
+        .then(()=>{
+            console.log(">>> MEGA | Form-App | Database is Connected..");
+        })
+        
+        .catch((err)=>{
+            console.log("DB Error",err);
+        });
+    
+    }
+    
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+
+            <div class="col-md-6 mt-5">
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre style="height: 600px;" class="m-0 ">
+<code>
+
+    // Project > Database > Models > User.model.js
+    // ----------------------------------------------------------------
+
+    import mongoose from 'mongoose';
+
+    const userSchema = new mongoose.Schema({
+        name: {
+            type:String,
+            required:[true,"Name Required"],
+        },
+    
+        email:{
+            type:String,
+            required:[true,"Email Required"],
+        },
+        
+        phone:{
+            type:String,
+            required:[true,"Phone Required"],
+        },
+    },{
+        timestamps:true
+    })
+    
+    const userModel = mongoose.model("User",userSchema)
+    export default userModel
+
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-12 mt-5">
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre class="m-0 p-3 p-md-5">
+<code>
+
+    // Project > Static >
+    // ---------------------------------------------------------------------------
+
+    // This Folder For Set Files Related By Front End Page as Bootstrap Files
+
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-12 mt-5">
+
+                <div class="border">
+                    <h5 class="m-0">  
+                        <pre style="height: 600px;" class="m-0 p-3 p-md-5">
+<code>
+
+    &#60;!-- Project > views > index.ejs --&#62;
+    &#60;!---------------------------------------------------------------------------&#62;
+
+    &#60;!DOCTYPE html&#62;
+    &#60;html lang="en"&#62;
+    &#60;head&#62;
+        &#60;meta charset="UTF-8"&#62;
+        &#60;meta name="viewport" content="width=device-width, initial-scale=1.0"&#62;
+
+        &#60;title&#62;Form App&#60;/title&#62;
+
+        &#60;!-- 
+            - For Link Js File Node.js Have Problem With Paths
+            - For Link File Go To index.js and set app.use(express.static("Static"))
+            - "Static" : Name Of Folder contain the Static files
+        --&#62;
+        &#60;link rel="stylesheet" href="./CSS/bootstrap.min.css"&#62;
+
+    &#60;/head&#62;
+    &#60;body class="bg-black"&#62;
+
+        &#60;!-- Welcome Section -------------------------------------------------------------&#62;
+
+        &#60;div class="bg-black text-white d-flex justify-content-center align-items-center py-5"&#62;
+            &#60;h1&#62;Welcome To Form App&#60;/h1&#62;
+        &#60;/div&#62;
+
+        &#60;!-- Set User Info To DB ---------------------------------------------------------&#62;
+
+        &#60;div class="container bg-black"&#62;
+
+            &#60;!--
+                - i Have Two form method (post / get)
+                - i will use post method for send data to DB
+                - action="/addUser" || this is the Path of Api
+                - input name = name of key i will send it to DB
+                - After Finished Create addUser Api in index.js file
+            --&#62;
+            &#60;form method="post" action="/addUser" class="col-md-6 mx-auto"&#62;
+
+                &#60;input id="inputName"  name="name"  type="text"   required placeholder="Full Name"     class="form-control my-3"&#62;
+                &#60;input id="inputPhone" name="phone" type="number" required placeholder="Your Phone" class="form-control my-3"&#62;
+                &#60;input id="inputEmail" name="email" type="email"  required placeholder="Email Address" class="form-control my-3"&#62;
+
+                &#60;div class="w-100 d-flex my-3"&#62;
+                    &#60;div class="w-75 text-start text-white"&#62;&#60;h4&#62;&#60;span class="text-primary"&#62;Created By :&#60;/span&#62; &#60;%= myName %&#62; &#60;/h4&#62;&#60;/div&#62;
+                    &#60;div class="w-25 text-end text-white"&#62;&#60;button id="btnRegis" class="btn btn-primary "&#62;Registration&#60;/button&#62;&#60;/div&#62;
+                &#60;/div&#62;
+
+            &#60;/form&#62;
+
+        &#60;/div&#62;
+
+        &#60;!-- Display Data Info From DB --------------------------------------------------&#62;
+
+        &#60;div class="container py-5 my-5"&#62;         
+
+                &#60;h1 class="text-primary mb-5"&#62;Data Display : &#60;span class="text-white"&#62;&#60;%= displayData %&#62;&#60;/span&#62;&#60;/h1&#62;
+
+                &#60;table class="table text-white text-center"&#62;
+                    &#60;thead&#62;
+                        &#60;tr&#62;
+                            &#60;td&#62;Name&#60;/td&#62;
+                            &#60;td&#62;Phone&#60;/td&#62;
+                            &#60;td&#62;Email&#60;/td&#62;
+                            &#60;td&#62;Delete&#60;/td&#62;
+                        &#60;/tr&#62;
+                    &#60;/thead&#62;
+
+                    &#60;tbody class="text-white"&#62;
+
+                        &#60;!-- Work Space --------------------------------&#62;
+
+                        &#60;!-- 
+                            &#60;tr&#62;
+                                &#60;td&#62;0&#60;/td&#62;
+                                &#60;td&#62;Ahmed&#60;/td&#62;
+                                &#60;td&#62;Ahmed@gmail.com&#60;/td&#62;
+                                &#60;td&#62;&#60;button class="btn btn-warning"&#62; Update &#60;/button&#62;&#60;/td&#62;
+                                &#60;td&#62;&#60;button class="btn btn-danger"&#62;  Delete &#60;/button&#62;&#60;/td&#62;
+                            &#60;/tr&#62;
+                        --&#62;
+
+                        &#60;!-- For Do IF Condition --------&#62;
+
+                        &#60;% if ( displayData == true ) { %&#62;
+
+                            &#60;!-- For Do For Loop --------&#62;
+
+                            &#60;% for( let index = 0; index &#60; allUsers.length; index++ ) { %&#62;
+
+                                &#60;tr&#62;
+                                    &#60;td&#62;&#60;%= allUsers[index].name %&#62;&#60;/td&#62;
+                                    &#60;td&#62;&#60;%= allUsers[index].phone %&#62;&#60;/td&#62;
+                                    &#60;td&#62;&#60;%= allUsers[index].email %&#62;&#60;/td&#62;
+                                    &#60;td&#62;
+                                        &#60;form method="post" action="/deleteUser/&#60;%= allUsers[index]._id %&#62;" class="col-md-6 mx-auto"&#62;  
+                                            &#60;button class="btn btn-danger"&#62; Delete &#60;/button&#62;
+                                        &#60;/form&#62;
+                                    &#60;/td&#62;
+                                &#60;/tr&#62;
+                            
+                            &#60;% } %&#62;
+
+                            
+                        &#60;% } %&#62;
+
+                        &#60;!-- Work Space --------------------------------&#62;
+                            
+                    &#60;/tbody&#62;
+                            
+                &#60;/table&#62;
+
+        &#60;/div&#62;
+
+        &#60;!-- JS Links -------------------------------------------------------------------&#62;
+
+        &#60;!-- 
+            - For Link Js File Node.js Have Problem With Paths
+            - For Link File Go To index.js and set app.use(express.static("Static"))
+            - "Static" : Name Of Folder contain the Static files
+         --&#62;
+        &#60;script src="./JS/bootstrap.bundle.min.js"&#62;&#60;/script&#62;
+
+    &#60;/body&#62;
+    &#60;/html&#62;
+
+</code>
+                        </pre>
+                    </h5>
+                </div>
+                
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+        </div>
+    </div>
+
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+
+            </div>
+
+        </main>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- Footer -->
+        <!------------>
+
+        <footer id="contact" class="py-5 bg-black text-white">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+
+                        <h4 class="mb-4 pb-4 border-bottom">Author :</h4>
+
+                        <h1>M O H A M E D</h1>
+                        
+                        <h1>M A G D Y</h1>
+    
+                    </div>
+    
+                    <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+    
+                        <h4 class="mb-4 pb-4 border-bottom">Contact :</h4>
+
+                        <h6><a href="mailto:Eng.M.Ezzeldeen@gmail.com" class="a_None text-white">Email: Eng.M.Ezzeldeen@gmail.com</a></h6>  
+
+                        <button class="bg-transparent text-white border-0 p-0" onclick="openLink('wa.me/+201285880488')"><h6 class="mb-0">Phone : +20 12 858 80 4 88</h6></button>    
+                        
+                        <div class="d-flex justify-content-start my-3">
+        
+                            <button onclick="openLink('github.com/Eng-M-Ma9dy')" class="SM-BTN-icon GitHub    me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-github"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.linkedin.com/in/eng-m-ma9dy/')" class="SM-BTN-icon LinkedIn  mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </button>
+        
+                            <button onclick="openLink('www.facebook.com/eng.m.ma9dy/')" class="SM-BTN-icon Facebook  mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.instagram.com/eng.m.ma9dy/')" class="SM-BTN-icon Instagram ms-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-instagram"></i>
+                            </button>
+                
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+    
+                        <h4 class="mb-4 pb-4 border-bottom">My Pages :</h4>
+
+                        <h6><a href="mailto:Info.Unit.Alex@gmail.com" class="a_None text-white">Info.Unit.Alex@gmail.com</a></h6>  
+
+                        <button class="bg-transparent text-white border-0 p-0" onclick="openLink('wa.me/+201140155633')"><h6 class="mb-0">Phone : +20 11 40 155 6 33</h6></button>    
+                        
+                        <div class="text-light d-flex justify-content-start my-3">
+        
+                            <button onclick="openLink('www.facebook.com/info.unit.iu/')" class="SM-BTN-icon Facebook  me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                                            
+                            <button onclick="openLink('www.tiktok.com/@info.unit.iu')" class="SM-BTN-icon TikTok    mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </button>
+                
+                            <button onclick="openLink('www.instagram.com/info.unit.iu')" class="SM-BTN-icon Instagram mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-instagram"></i>
+                            </button>
+
+                            <button onclick="openLink('youtube.com/@Info.Unit-IU')" class="SM-BTN-icon Youtube   ms-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-youtube"></i>
+                            </button>
+                
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 mt-3 mt-lg-0 d-none d-md-flex justify-content-start justify-content-xl-center">
+
+                        <button class="bg-transparent text-white border-0 p-0" onclick="openLink('eng-m-ma9dy.github.io/Portfolio/')"><img src="../src/Images/Logo-MM.jpg" class="footer_logo rounded-circle" alt=""></button>
+            
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------------> 
+        <!-- JS Links -->
+        <!-------------->
+        
+        <!-- Offline Bootstrap js : -->
+        <script src="../JS/bootstrap.bundle.min.js"></script>
+
+        <!-- jQuery js : -->
+        <script src="../JS/jquery-3.6.3.min.js"></script>
+
+        <!-- My Shared js : -->
+        <script src="../JS/shared.js"></script>
+    
+    </body>
+</html>
